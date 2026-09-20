@@ -1,0 +1,304 @@
+{
+ "job": {
+  "job_id": "C1000T1A-L24071-00418__sparam-1000base-t1-pair__20260918T093714",
+  "campaign": "incoming-inspection-wk38",
+  "batch": "B-2026-38-01",
+  "scan": "C1000T1A-L24071-00418",
+  "sample": {
+   "barcode": "C1000T1A-L24071-00418",
+   "sample_id": "C1000T1A-L24071-0041",
+   "part_number": "C1000T1A",
+   "lot": "L24071",
+   "cable_type": "1000base-t1-link-segment",
+   "length_m": 15.0,
+   "design": "D100-PE-035",
+   "notes": "",
+   "sim_profile": "good",
+   "sim_pairs": "1"
+  },
+  "barcode": {
+   "raw": "C1000T1A-L24071-00418",
+   "scheme": "internal",
+   "part": "C1000T1A",
+   "lot": "L24071",
+   "serial": "0041",
+   "check_ok": true
+  },
+  "sample_id": "C1000T1A-L24071-0041",
+  "lot": "L24071",
+  "part_number": "C1000T1A",
+  "cable_type": "1000base-t1-link-segment",
+  "procedure": {
+   "id": "sparam-1000base-t1-pair",
+   "version": "1.2",
+   "title": "Single pair S-parameters, 1000BASE-T1 link segment (1-600 MHz)",
+   "kind": "s-parameters",
+   "cable_type": "1000base-t1-link-segment",
+   "hash": "76dd721489cb0ab25067b590f792be6ae35c94e9ba51a9c496878da6a737e9e9",
+   "path": "/tmp/claude-0/-home-claude/3f47c158-0c10-51ff-923e-b80cf8aa746d/scratchpad/venvB/lib/python3.11/site-packages/labauto/procedures/sparam-1000base-t1-pair.toml"
+  },
+  "procedure_id": "sparam-1000base-t1-pair",
+  "procedure_version": "1.2",
+  "procedure_hash": "76dd721489cb0ab25067b590f792be6ae35c94e9ba51a9c496878da6a737e9e9",
+  "operator": "sanil",
+  "site": "LAB1",
+  "started": "2026-09-18T09:37:14+00:00",
+  "finished": "2026-09-18T09:37:29+00:00",
+  "state": "DONE",
+  "trust": "trusted",
+  "reason": "",
+  "error": "",
+  "verdict": "PASS",
+  "headline": "insertion_loss[A]",
+  "headline_margin": 0.2693535950114606,
+  "temperature_c": 23.0,
+  "calibration_id": "CAL-20260916-SOLT4",
+  "calibration": {
+   "id": "CAL-20260916-SOLT4",
+   "date": "2026-09-16T09:37:13+00:00",
+   "type": "SOLT",
+   "ports": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "temperature_c": 23.0,
+   "operator": "sanil",
+   "kit_serial": "85052D-MY12345",
+   "instrument_calset": "SOLT4_20260916",
+   "decision": {
+    "status": "valid",
+    "id": "CAL-20260916-SOLT4",
+    "reasons": [],
+    "age_days": 2.000131646538222,
+    "delta_t_k": 0.0
+   },
+   "verification": {
+    "time": "2026-09-18T09:37:24+00:00",
+    "standard": "CHECK-ATT20",
+    "status": "pass",
+    "port_pairs": [
+     [
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "max_dev_db": 0.026594493853526302,
+    "max_dev_deg": 0.3323898152651478,
+    "min_rl_db": 41.51180389678521,
+    "tol_db": 0.1,
+    "tol_deg": 3.0,
+    "rl_min_db": 30.0,
+    "details": {
+     "1-2": {
+      "max_dev_db": 0.01882711217673716,
+      "max_dev_deg": 0.328697814018443,
+      "min_rl_db": 42.15759887269027,
+      "mean_dev_db": -0.0076342881496243315
+     },
+     "3-4": {
+      "max_dev_db": 0.026594493853526302,
+      "max_dev_deg": 0.3323898152651478,
+      "min_rl_db": 41.51180389678521,
+      "mean_dev_db": -0.015612470637116495
+     }
+    },
+    "file": ""
+   },
+   "age_days": 2.000131646538222,
+   "delta_t_k": 0.0
+  },
+  "archive_dir": "/tmp/lb/archive/2026/C1000T1A-L24071-00418__sparam-1000base-t1-pair__20260918T093714",
+  "attempts": 1,
+  "files": [
+   {
+    "name": "pairA",
+    "ports": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "port_map": "A+near,A-near,A+far,A-far",
+    "quantities": null,
+    "attempt": 1,
+    "sweep_s": 4.920000076293945,
+    "checks": [
+     {
+      "name": "grid",
+      "status": "pass",
+      "value": 1200.0,
+      "bound": "1200 points 1e+06-6e+08 Hz",
+      "message": ""
+     },
+     {
+      "name": "passivity",
+      "status": "pass",
+      "value": -0.0027955278939940653,
+      "bound": "<= 0.02",
+      "message": "max singular value minus one"
+     },
+     {
+      "name": "reciprocity",
+      "status": "pass",
+      "value": 0.009350130281664953,
+      "bound": "<= 0.1 dB",
+      "message": "max |S_ij/S_ji| in dB above -50 dB"
+     },
+     {
+      "name": "connection",
+      "status": "pass",
+      "value": -0.3875464049885393,
+      "bound": ">= -60 dB",
+      "message": "max differential transmission; below the bound = open/unconnected"
+     },
+     {
+      "name": "trace_noise",
+      "status": "pass",
+      "value": 0.0001782259368719715,
+      "bound": "<= 0.05 dB",
+      "message": "std of second differences of IL / sqrt(6)"
+     },
+     {
+      "name": "length",
+      "status": "pass",
+      "value": 14.979690085463268,
+      "bound": "15.0 m +- 12.0 %",
+      "message": "electrical length 14.98 m from group delay 73.5 ns at NVP 0.68"
+     },
+     {
+      "name": "il_rdc",
+      "status": "pass",
+      "value": 3.2363515446535454,
+      "bound": "0.8..4.0",
+      "message": "IL(1 MHz) = 0.388 dB vs DC-resistance floor 0.120 dB (R_loop 2.757 ohm)"
+     },
+     {
+      "name": "il_envelope",
+      "status": "pass",
+      "value": 0.1970163316688346,
+      "bound": "0.05..0.6 dB/m",
+      "message": "insertion loss per metre at 100 MHz"
+     }
+    ],
+    "trust": "trusted",
+    "reasons": [],
+    "measured_at": "2026-09-18T09:37:29+00:00",
+    "sweep_readback": {
+     "start_hz": 1000000.0,
+     "stop_hz": 600000000.0,
+     "points": 1200,
+     "ifbw_hz": 1000.0,
+     "power_dbm": 0.0,
+     "averages": 1,
+     "sweep_type": "LIN"
+    },
+    "path": "/tmp/lb/archive/2026/C1000T1A-L24071-00418__sparam-1000base-t1-pair__20260918T093714/pairA.s4p",
+    "sha256": "612594934c1e189156304c9c68018a212ceecdac6ab0c6753d58b93a2bd474a3",
+    "nports": 4
+   }
+  ],
+  "aux": {
+   "loop_resistance": 2.757263,
+   "loop_resistance_state": {
+    "identity": {
+     "manufacturer": "labauto-sim",
+     "model": "DMM-6.5",
+     "serial": "SIM0003",
+     "firmware": "1.1",
+     "idn": "labauto-sim,DMM-6.5,SIM0003,1.1"
+    },
+    "address": "SIM::DMM",
+    "dialect": "generic-scpi-dmm",
+    "capabilities": {
+     "role": "dmm",
+     "ports": 0,
+     "fmin_hz": 0.0,
+     "fmax_hz": 0.0,
+     "tmin_c": 0.0,
+     "tmax_c": 0.0,
+     "features": [
+      "4-wire-resistance"
+     ]
+    }
+   }
+  },
+  "analysis": {
+   "cablecheck": {
+    "verdict": "PASS",
+    "software": "0.1.1",
+    "warnings": [
+     "limit 'next' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)",
+     "limit 'fext' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)"
+    ],
+    "limit_status": "transcribed-unverified",
+    "headline_margin": 0.2693535950114606,
+    "headline": "insertion_loss[A]",
+    "headline_x": 1000000.0,
+    "report_html": "cablecheck_report.html",
+    "result_json": "cablecheck_result.json",
+    "db_run_id": 1
+   },
+   "zprofile": {
+    "status": "skipped",
+    "reason": "zprofile not installed"
+   },
+   "cableanalytics": {
+    "status": "skipped",
+    "reason": "cableanalytics not installed"
+   }
+  },
+  "environment": {
+   "ambient_c": 23.0,
+   "humidity_pct": 45.0,
+   "sample_temperature_c": 23.0,
+   "sample_temperature_method": "ambient (no chamber)"
+  },
+  "software": {
+   "labauto": "0.1.0",
+   "cablecheck": "0.1.1",
+   "numpy": "2.4.6",
+   "python": "3.11.15",
+   "platform": "Linux-6.18.44-fc-v33-x86_64-with-glibc2.39",
+   "labauto_git": null,
+   "zprofile": null,
+   "cableanalytics": null
+  }
+ },
+ "files": {
+  "analysis/cablecheck_report.html": {
+   "sha256": "00f0ad97a349fa0a3d4790c5f268e43b67fe4a767204f72aaf35b5a05a6c8754",
+   "bytes": 493210
+  },
+  "analysis/cablecheck_result.json": {
+   "sha256": "0b8f7aff364c3b7e397939f6211a3d3230e1a017adb051e4f00a32985016c368",
+   "bytes": 403875
+  },
+  "aux.json": {
+   "sha256": "b611e7fe82763cdb1ff5b6986d95ab735a6409e726968283e0b24b847f4eae1a",
+   "bytes": 467
+  },
+  "journal.jsonl": {
+   "sha256": "077b71a7324e243bf19e6ccbcb9857d9697ca95bc9d89e64d194d3d26b62f20b",
+   "bytes": 3334
+  },
+  "pairA.s4p": {
+   "sha256": "612594934c1e189156304c9c68018a212ceecdac6ab0c6753d58b93a2bd474a3",
+   "bytes": 927766
+  },
+  "pairA.s4p.meta.json": {
+   "sha256": "8c51134ba3bcbbc97e667ca083e3c24b5a5bbf924b677d81bf285475ba9edb31",
+   "bytes": 7048
+  },
+  "procedure.toml": {
+   "sha256": "76dd721489cb0ab25067b590f792be6ae35c94e9ba51a9c496878da6a737e9e9",
+   "bytes": 2232
+  }
+ },
+ "sealed": "2026-09-18T09:37:16+00:00"
+}

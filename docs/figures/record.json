@@ -1,0 +1,2612 @@
+{
+ "harnesses": {
+  "camera-link": {
+   "describe": {
+    "name": "ECU-A to camera",
+    "standard": "1000base-t1-link-segment",
+    "phy": "1000base-t1",
+    "temperature_c": 85.0,
+    "elements": [
+     {
+      "type": "PcbTrace",
+      "name": "ecu-pcb",
+      "z_diff": 95.0,
+      "length_m": 0.06,
+      "nvp": 0.55,
+      "a": 3e-06,
+      "b": 8e-11
+     },
+     {
+      "type": "Connector",
+      "name": "ecu-header",
+      "z_diff": 90.0,
+      "length_m": 0.02,
+      "nvp": 0.6,
+      "r_contact_ohm": 0.005,
+      "l_pin_nH": 1.0,
+      "c_pad_pF": 0.3,
+      "asym_c": 0.01,
+      "loss_db_per_m_at_1ghz": 2.0
+     },
+     {
+      "type": "CableSegment",
+      "name": "cable-1",
+      "length_m": 4.0,
+      "temperature_c": 85.0,
+      "model": {
+       "hybrid_raw_structure": true,
+       "skin_temperature": true,
+       "c0_d_db_per_m": 0.008597819752830265,
+       "a_d_db_per_m_sqrtHz": 1.6647024512701935e-05,
+       "b_d_db_per_m_Hz": 1.984627754840841e-10,
+       "nvp_d": 0.6820859330727655,
+       "z_d_ohm": 99.48004612911319,
+       "kz_d": 26.3675258356286,
+       "a_c": 1.1909317670002439e-05,
+       "b_c": 2.0458379900191602e-10,
+       "nvp_c": 0.6614046385333492,
+       "z_c_ohm": 34.82681099471129,
+       "conv_per_m_at_f_conv": 6.538034398607038e-06,
+       "f_conv_hz": 99917431.19266056,
+       "source": "measured pairA_10m_23C.s4p (10.0 m)",
+       "fit_rms_db_per_m": 0.00029493565502215,
+       "fit_band_hz": [
+        1000000.0,
+        600000000.0
+       ]
+      }
+     },
+     {
+      "type": "Connector",
+      "name": "inline",
+      "z_diff": 88.0,
+      "length_m": 0.03,
+      "nvp": 0.6,
+      "r_contact_ohm": 0.005,
+      "l_pin_nH": 1.0,
+      "c_pad_pF": 0.3,
+      "asym_c": 0.02,
+      "loss_db_per_m_at_1ghz": 2.0
+     },
+     {
+      "type": "CableSegment",
+      "name": "cable-2",
+      "length_m": 8.0,
+      "temperature_c": 85.0,
+      "model": {
+       "hybrid_raw_structure": true,
+       "skin_temperature": true,
+       "c0_d_db_per_m": 0.008597819752830265,
+       "a_d_db_per_m_sqrtHz": 1.6647024512701935e-05,
+       "b_d_db_per_m_Hz": 1.984627754840841e-10,
+       "nvp_d": 0.6820859330727655,
+       "z_d_ohm": 99.48004612911319,
+       "kz_d": 26.3675258356286,
+       "a_c": 1.1909317670002439e-05,
+       "b_c": 2.0458379900191602e-10,
+       "nvp_c": 0.6614046385333492,
+       "z_c_ohm": 34.82681099471129,
+       "conv_per_m_at_f_conv": 6.538034398607038e-06,
+       "f_conv_hz": 99917431.19266056,
+       "source": "measured pairA_10m_23C.s4p (10.0 m)",
+       "fit_rms_db_per_m": 0.00029493565502215,
+       "fit_band_hz": [
+        1000000.0,
+        600000000.0
+       ]
+      }
+     },
+     {
+      "type": "Connector",
+      "name": "camera-header",
+      "z_diff": 90.0,
+      "length_m": 0.02,
+      "nvp": 0.6,
+      "r_contact_ohm": 0.005,
+      "l_pin_nH": 1.0,
+      "c_pad_pF": 0.3,
+      "asym_c": 0.01,
+      "loss_db_per_m_at_1ghz": 2.0
+     },
+     {
+      "type": "PcbTrace",
+      "name": "camera-pcb",
+      "z_diff": 95.0,
+      "length_m": 0.04,
+      "nvp": 0.55,
+      "a": 3e-06,
+      "b": 8e-11
+     }
+    ],
+    "sources": [
+     {
+      "element": "cable-1",
+      "source": "touchstone",
+      "path": "/tmp/g/demo/pairA_10m_23C.s4p",
+      "measured_length_m": 10.0,
+      "measured_at_c": 23.0
+     },
+     {
+      "element": "cable-2",
+      "source": "touchstone",
+      "path": "/tmp/g/demo/pairA_10m_23C.s4p",
+      "measured_length_m": 10.0,
+      "measured_at_c": 23.0
+     }
+    ],
+    "tolerances": {
+     "cable_a_rel": 0.02,
+     "cable_b_rel": 0.05,
+     "cable_z_ohm": 1.5,
+     "cable_length_rel": 0.005,
+     "temperature_k": 3.0,
+     "conn_z_ohm": 5.0,
+     "conn_l_pin_rel": 0.3,
+     "conn_c_pad_rel": 0.3,
+     "conn_asym_c_abs": 0.01,
+     "phy_rl_db": 20.0
+    },
+    "path": "/tmp/g/demo/camera-link.toml"
+   },
+   "evaluation": {
+    "verdict": "PASS",
+    "headline": "insertion_loss[A]",
+    "headline_margin_db": 0.2986422336119221,
+    "headline_x": 1000000.0,
+    "results": [
+     {
+      "quantity": "insertion_loss",
+      "pair": "A",
+      "unit": "dB",
+      "xunit": "Hz",
+      "kind": "max",
+      "passed": true,
+      "worst_margin": 0.2986422336119221,
+      "x_worst": 1000000.0,
+      "value_at_worst": 0.3582577663880778,
+      "limit_at_worst": 0.6568999999999999,
+      "n_points": 1200,
+      "n_fail": 0,
+      "note": "whole link segment incl. connectors; 1 <= f <= 600 MHz"
+     },
+     {
+      "quantity": "lcl",
+      "pair": "A",
+      "unit": "dB",
+      "xunit": "Hz",
+      "kind": "min",
+      "passed": true,
+      "worst_margin": 3.8246998015024545,
+      "x_worst": 323730608.84070057,
+      "value_at_worst": 46.93248467743697,
+      "limit_at_worst": 43.10778487593451,
+      "n_points": 1181,
+      "n_fail": 0,
+      "note": "mode conversion loss, near end (LCL), 10-600 MHz"
+     },
+     {
+      "quantity": "lctl",
+      "pair": "A",
+      "unit": "dB",
+      "xunit": "Hz",
+      "kind": "min",
+      "passed": true,
+      "worst_margin": 6.736420196875088,
+      "x_worst": 177352793.99499583,
+      "value_at_worst": 52.852294417640465,
+      "limit_at_worst": 46.11587422076538,
+      "n_points": 1181,
+      "n_fail": 0,
+      "note": "mode conversion transfer loss (LCTL), 10-600 MHz"
+     },
+     {
+      "quantity": "return_loss",
+      "pair": "A",
+      "unit": "dB",
+      "xunit": "Hz",
+      "kind": "min",
+      "passed": true,
+      "worst_margin": 8.887550142477444,
+      "x_worst": 2498748.957464554,
+      "value_at_worst": 27.887550142477444,
+      "limit_at_worst": 19.0,
+      "n_points": 1200,
+      "n_fail": 0,
+      "note": "differential, both ends, 100 ohm reference"
+     },
+     {
+      "quantity": "phase_delay",
+      "pair": "A",
+      "unit": "ns",
+      "xunit": "Hz",
+      "kind": "max",
+      "passed": true,
+      "worst_margin": 33.71326706420359,
+      "x_worst": 2498748.957464554,
+      "value_at_worst": 60.28673293579641,
+      "limit_at_worst": 94.0,
+      "n_points": 1197,
+      "n_fail": 0,
+      "note": "maximum link delay, 2-600 MHz"
+     },
+     {
+      "quantity": "group_delay",
+      "pair": "A",
+      "unit": "ns",
+      "xunit": "Hz",
+      "kind": null,
+      "passed": null,
+      "worst_margin": null,
+      "x_worst": null,
+      "value_at_worst": null,
+      "limit_at_worst": null,
+      "n_points": 1200,
+      "n_fail": 0,
+      "note": "informational (no limit for this cable type)"
+     },
+     {
+      "quantity": "delay_per_metre",
+      "pair": "A",
+      "unit": "ns/m",
+      "xunit": "Hz",
+      "kind": null,
+      "passed": null,
+      "worst_margin": null,
+      "x_worst": null,
+      "value_at_worst": null,
+      "limit_at_worst": null,
+      "n_points": 1200,
+      "n_fail": 0,
+      "note": "informational (no limit for this cable type)"
+     },
+     {
+      "quantity": "nvp",
+      "pair": "A",
+      "unit": "",
+      "xunit": "",
+      "kind": null,
+      "passed": null,
+      "worst_margin": null,
+      "x_worst": null,
+      "value_at_worst": null,
+      "limit_at_worst": null,
+      "n_points": 1,
+      "n_fail": 0,
+      "note": "informational (no limit for this cable type)"
+     }
+    ],
+    "warnings": [
+     "limit 'next' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)",
+     "limit 'fext' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)",
+     "limit 'impedance_fitted' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)",
+     "limit 'impedance_mean' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)",
+     "limit 'impedance_min' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)",
+     "limit 'impedance_max' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)"
+    ],
+    "cable_length_m": 12.0,
+    "n_connectors": 3,
+    "temperature_c": 85.0,
+    "il_db": {
+     "10MHz": 0.8875930140164748,
+     "100MHz": 2.715937065718015,
+     "300MHz": 5.008437508572949,
+     "600MHz": 7.559444022308899
+    },
+    "rl_min_db": 20.059179013799774,
+    "lcl_min_db": 44.148008676702695
+   },
+   "eye": {
+    "phy": "1000BASE-T1",
+    "baud": 750000000.0,
+    "height_raw_v": 0.0,
+    "width_raw_ui": 0.0,
+    "height_eq_v": 0.30885099616100414,
+    "width_eq_ui": 1.0,
+    "height_noise_v": 0.22449099616100415,
+    "closure_raw": 1.0,
+    "closure_eq": 0.04722732353530634,
+    "main_cursor": 0.6483227211475582,
+    "isi_raw_v": 0.3972523014916891,
+    "isi_eq_v": 0.015309219376462568,
+    "open_raw": false,
+    "open_eq": true,
+    "sim_height_raw_v": 0.07980526488991244,
+    "sim_height_eq_v": 0.3207602628349682,
+    "f_max_hz": 12000000000.0,
+    "band_hz": 600000000.0
+   },
+   "limiting_element": [
+    {
+     "element": "cable-1",
+     "type": "CableSegment",
+     "margin_without_db": 0.4152200595413696,
+     "gain_db": 0.11657782592944749,
+     "headline_without": "insertion_loss[A]"
+    },
+    {
+     "element": "inline",
+     "type": "Connector",
+     "margin_without_db": 0.300687701866456,
+     "gain_db": 0.0020454682545338887,
+     "headline_without": "insertion_loss[A]"
+    },
+    {
+     "element": "camera-header",
+     "type": "Connector",
+     "margin_without_db": 0.300171987614253,
+     "gain_db": 0.0015297540023309075,
+     "headline_without": "insertion_loss[A]"
+    },
+    {
+     "element": "ecu-header",
+     "type": "Connector",
+     "margin_without_db": 0.30017191584486413,
+     "gain_db": 0.0015296822329420312,
+     "headline_without": "insertion_loss[A]"
+    },
+    {
+     "element": "ecu-pcb",
+     "type": "PcbTrace",
+     "margin_without_db": 0.29884349112930375,
+     "gain_db": 0.00020125751738164777,
+     "headline_without": "insertion_loss[A]"
+    },
+    {
+     "element": "camera-pcb",
+     "type": "PcbTrace",
+     "margin_without_db": 0.29877640399299676,
+     "gain_db": 0.00013417038107466084,
+     "headline_without": "insertion_loss[A]"
+    },
+    {
+     "element": "cable-2",
+     "type": "CableSegment",
+     "margin_without_db": 0.2000043876422808,
+     "gain_db": -0.09863784596964131,
+     "headline_without": "lcl[A]"
+    }
+   ],
+   "max_length_vs_temperature": [
+    {
+     "temperature_c": 23.0,
+     "max_length_m": 18.90625,
+     "limited_by": "phase_delay[A]",
+     "max_length_eye_m": 18.90625
+    },
+    {
+     "temperature_c": 60.0,
+     "max_length_m": 18.84375,
+     "limited_by": "phase_delay[A]",
+     "max_length_eye_m": 18.84375
+    },
+    {
+     "temperature_c": 85.0,
+     "max_length_m": 18.8125,
+     "limited_by": "phase_delay[A]",
+     "max_length_eye_m": 18.8125
+    },
+    {
+     "temperature_c": 105.0,
+     "max_length_m": 18.78125,
+     "limited_by": "phase_delay[A]",
+     "max_length_eye_m": 18.78125
+    },
+    {
+     "temperature_c": 125.0,
+     "max_length_m": 18.75,
+     "limited_by": "phase_delay[A]",
+     "max_length_eye_m": 18.75
+    }
+   ],
+   "temperature_ceiling": {
+    "temperature_ceiling_c": 150.0,
+    "note": "passes up to 150.0 C"
+   },
+   "connector_budget": {
+    "max_inline_connectors": 2,
+    "table": [
+     {
+      "n_inline": 0,
+      "verdict": "PASS",
+      "headline": "insertion_loss[A]",
+      "headline_margin_db": 0.30068770183790144,
+      "lcl_min_db": 50.97796320607914
+     },
+     {
+      "n_inline": 1,
+      "verdict": "PASS",
+      "headline": "insertion_loss[A]",
+      "headline_margin_db": 0.2989141727737051,
+      "lcl_min_db": 45.76901088520215
+     },
+     {
+      "n_inline": 2,
+      "verdict": "PASS",
+      "headline": "insertion_loss[A]",
+      "headline_margin_db": 0.2971394289337874,
+      "lcl_min_db": 42.23633586441021
+     },
+     {
+      "n_inline": 3,
+      "verdict": "FAIL",
+      "headline": "lcl[A]",
+      "headline_margin_db": -0.9628435384336314,
+      "lcl_min_db": 39.75720595958191
+     },
+     {
+      "n_inline": 4,
+      "verdict": "FAIL",
+      "headline": "lcl[A]",
+      "headline_margin_db": -3.0549972740022966,
+      "lcl_min_db": 37.96993700108218
+     }
+    ],
+    "cable_length_m": 12.0,
+    "connector": {
+     "type": "Connector",
+     "name": "inline",
+     "z_diff": 88.0,
+     "length_m": 0.025,
+     "nvp": 0.6,
+     "r_contact_ohm": 0.005,
+     "l_pin_nH": 1.0,
+     "c_pad_pF": 0.3,
+     "asym_c": 0.02,
+     "loss_db_per_m_at_1ghz": 2.0
+    }
+   },
+   "monte_carlo": {
+    "n": 200,
+    "p_pass": 0.845,
+    "margin_percentiles_db": {
+     "p5": -1.2608892146207646,
+     "p50": 0.2966510719897589,
+     "p95": 0.30548368169440315
+    },
+    "quantity_pass_probability": {
+     "insertion_loss": 1.0,
+     "lcl": 0.845,
+     "lctl": 1.0,
+     "return_loss": 1.0,
+     "phase_delay": 1.0
+    },
+    "eye_height_percentiles_v": {
+     "p5": 0.1512508431542665,
+     "p50": 0.1966807467632061,
+     "p95": 0.25615659265593826
+    },
+    "headline_counts": {
+     "insertion_loss[A]": 160,
+     "lcl[A]": 40
+    },
+    "tolerances": {
+     "cable_a_rel": 0.02,
+     "cable_b_rel": 0.05,
+     "cable_z_ohm": 1.5,
+     "cable_length_rel": 0.005,
+     "temperature_k": 3.0,
+     "conn_z_ohm": 5.0,
+     "conn_l_pin_rel": 0.3,
+     "conn_c_pad_rel": 0.3,
+     "conn_asym_c_abs": 0.01,
+     "phy_rl_db": 20.0
+    }
+   },
+   "sensitivity": [
+    {
+     "parameter": "conn_asym",
+     "margin_plus_db": -0.957697593003694,
+     "eye_plus_v": 2.61687945118938e-06,
+     "margin_minus_db": 2.3427065287684457e-09,
+     "eye_minus_v": -1.202980075498683e-06,
+     "margin_swing_db": 0.9576975953464004,
+     "eye_swing_v": 3.819859526688063e-06
+    },
+    {
+     "parameter": "cable_a",
+     "margin_plus_db": -0.004450826303359912,
+     "eye_plus_v": -0.002008470311463173,
+     "margin_minus_db": 0.004450803448292406,
+     "eye_minus_v": 0.002015011119860355,
+     "margin_swing_db": 0.008901629751652318,
+     "eye_swing_v": 0.004023481431323528
+    },
+    {
+     "parameter": "cable_z",
+     "margin_plus_db": -0.004208341394032478,
+     "eye_plus_v": -0.0016228168573819701,
+     "margin_minus_db": 0.004037628893962086,
+     "eye_minus_v": 0.0011023927221505136,
+     "margin_swing_db": 0.008245970287994564,
+     "eye_swing_v": 0.0027252095795324838
+    },
+    {
+     "parameter": "temperature",
+     "margin_plus_db": -0.0022340303861548283,
+     "eye_plus_v": -0.0006968101904116231,
+     "margin_minus_db": 0.0022388907773473465,
+     "eye_minus_v": 0.0007007483761911626,
+     "margin_swing_db": 0.004472921163502175,
+     "eye_swing_v": 0.0013975585666027857
+    },
+    {
+     "parameter": "cable_length",
+     "margin_plus_db": -0.0017426533413201772,
+     "eye_plus_v": 0.0008094495586184469,
+     "margin_minus_db": 0.0017428158887319856,
+     "eye_minus_v": 0.0009090868383493933,
+     "margin_swing_db": 0.003485469230052163,
+     "eye_swing_v": 9.963727973094638e-05
+    },
+    {
+     "parameter": "conn_z",
+     "margin_plus_db": -0.00020016974623038308,
+     "eye_plus_v": 0.004520990644480083,
+     "margin_minus_db": 0.00019911914630410532,
+     "eye_minus_v": -0.005725082926668956,
+     "margin_swing_db": 0.0003992888925344884,
+     "eye_swing_v": 0.01024607357114904
+    },
+    {
+     "parameter": "cable_b",
+     "margin_plus_db": -0.0001495472056028957,
+     "eye_plus_v": -0.0009660775928941323,
+     "margin_minus_db": 0.00014954718871135197,
+     "eye_minus_v": 0.000970260708390347,
+     "margin_swing_db": 0.00029909439431424767,
+     "eye_swing_v": 0.0019363383012844793
+    },
+    {
+     "parameter": "conn_l_pin",
+     "margin_plus_db": 1.2313234705629839e-05,
+     "eye_plus_v": 0.003209696848296417,
+     "margin_minus_db": -1.2407049137241888e-05,
+     "eye_minus_v": -0.004336268871902749,
+     "margin_swing_db": 2.4720283842871726e-05,
+     "eye_swing_v": 0.007545965720199166
+    },
+    {
+     "parameter": "conn_c_pad",
+     "margin_plus_db": -9.440596927312583e-06,
+     "eye_plus_v": -0.003250737886848487,
+     "margin_minus_db": 9.383642807336834e-06,
+     "eye_minus_v": 0.0025215149316342167,
+     "margin_swing_db": 1.8824239734649417e-05,
+     "eye_swing_v": 0.005772252818482704
+    }
+   ]
+  },
+  "coefficients-link": {
+   "describe": {
+    "name": "ECU-A to camera (data-sheet cable)",
+    "standard": "1000base-t1-link-segment",
+    "phy": "1000base-t1",
+    "temperature_c": 85.0,
+    "elements": [
+     {
+      "type": "PcbTrace",
+      "name": "ecu-pcb",
+      "z_diff": 95.0,
+      "length_m": 0.06,
+      "nvp": 0.55,
+      "a": 3e-06,
+      "b": 8e-11
+     },
+     {
+      "type": "Connector",
+      "name": "ecu-header",
+      "z_diff": 90.0,
+      "length_m": 0.025,
+      "nvp": 0.6,
+      "r_contact_ohm": 0.005,
+      "l_pin_nH": 1.0,
+      "c_pad_pF": 0.3,
+      "asym_c": 0.01,
+      "loss_db_per_m_at_1ghz": 2.0
+     },
+     {
+      "type": "CableSegment",
+      "name": "cable-1",
+      "length_m": 4.0,
+      "temperature_c": 85.0,
+      "model": {
+       "hybrid_raw_structure": false,
+       "skin_temperature": true,
+       "c0_d_db_per_m": 0.0,
+       "a_d_db_per_m_sqrtHz": 1.66e-05,
+       "b_d_db_per_m_Hz": 2e-10,
+       "nvp_d": 0.68,
+       "z_d_ohm": 100.0,
+       "kz_d": 0.0,
+       "a_c": 1.4940000000000001e-05,
+       "b_c": 1.8e-10,
+       "nvp_c": 0.66,
+       "z_c_ohm": 35.0,
+       "conv_per_m_at_f_conv": 0.0,
+       "f_conv_hz": 100000000.0,
+       "source": "coefficients",
+       "fit_rms_db_per_m": 0.0,
+       "fit_band_hz": [
+        0.0,
+        0.0
+       ]
+      }
+     },
+     {
+      "type": "Connector",
+      "name": "inline",
+      "z_diff": 88.0,
+      "length_m": 0.025,
+      "nvp": 0.6,
+      "r_contact_ohm": 0.005,
+      "l_pin_nH": 1.0,
+      "c_pad_pF": 0.3,
+      "asym_c": 0.02,
+      "loss_db_per_m_at_1ghz": 2.0
+     },
+     {
+      "type": "CableSegment",
+      "name": "cable-2",
+      "length_m": 8.0,
+      "temperature_c": 85.0,
+      "model": {
+       "hybrid_raw_structure": false,
+       "skin_temperature": true,
+       "c0_d_db_per_m": 0.0,
+       "a_d_db_per_m_sqrtHz": 1.66e-05,
+       "b_d_db_per_m_Hz": 2e-10,
+       "nvp_d": 0.68,
+       "z_d_ohm": 100.0,
+       "kz_d": 0.0,
+       "a_c": 1.4940000000000001e-05,
+       "b_c": 1.8e-10,
+       "nvp_c": 0.66,
+       "z_c_ohm": 35.0,
+       "conv_per_m_at_f_conv": 0.0,
+       "f_conv_hz": 100000000.0,
+       "source": "coefficients",
+       "fit_rms_db_per_m": 0.0,
+       "fit_band_hz": [
+        0.0,
+        0.0
+       ]
+      }
+     },
+     {
+      "type": "Connector",
+      "name": "camera-header",
+      "z_diff": 90.0,
+      "length_m": 0.025,
+      "nvp": 0.6,
+      "r_contact_ohm": 0.005,
+      "l_pin_nH": 1.0,
+      "c_pad_pF": 0.3,
+      "asym_c": 0.01,
+      "loss_db_per_m_at_1ghz": 2.0
+     },
+     {
+      "type": "PcbTrace",
+      "name": "camera-pcb",
+      "z_diff": 95.0,
+      "length_m": 0.04,
+      "nvp": 0.55,
+      "a": 3e-06,
+      "b": 8e-11
+     }
+    ],
+    "sources": [
+     {
+      "element": "cable-1",
+      "source": "coefficients",
+      "a": 1.66e-05,
+      "b": 2e-10,
+      "nvp": 0.68,
+      "z_diff": 100
+     },
+     {
+      "element": "cable-2",
+      "source": "coefficients",
+      "a": 1.66e-05,
+      "b": 2e-10,
+      "nvp": 0.68,
+      "z_diff": 100
+     }
+    ],
+    "tolerances": {
+     "cable_a_rel": 0.02,
+     "cable_b_rel": 0.05,
+     "cable_z_ohm": 1.0,
+     "cable_length_rel": 0.005,
+     "temperature_k": 2.0,
+     "conn_z_ohm": 5.0,
+     "conn_l_pin_rel": 0.3,
+     "conn_c_pad_rel": 0.3,
+     "conn_asym_c_abs": 0.01,
+     "phy_rl_db": 20.0
+    },
+    "path": "/tmp/g/demo/coefficients-link.toml"
+   },
+   "evaluation": {
+    "verdict": "PASS",
+    "headline": "insertion_loss[A]",
+    "headline_margin_db": 0.424812311845488,
+    "headline_x": 1000000.0,
+    "results": [
+     {
+      "quantity": "insertion_loss",
+      "pair": "A",
+      "unit": "dB",
+      "xunit": "Hz",
+      "kind": "max",
+      "passed": true,
+      "worst_margin": 0.424812311845488,
+      "x_worst": 1000000.0,
+      "value_at_worst": 0.23208768815451192,
+      "limit_at_worst": 0.6568999999999999,
+      "n_points": 1200,
+      "n_fail": 0,
+      "note": "whole link segment incl. connectors; 1 <= f <= 600 MHz"
+     },
+     {
+      "quantity": "lcl",
+      "pair": "A",
+      "unit": "dB",
+      "xunit": "Hz",
+      "kind": "min",
+      "passed": true,
+      "worst_margin": 4.0765859338606845,
+      "x_worst": 597502085.0708925,
+      "value_at_worst": 44.12091915030457,
+      "limit_at_worst": 40.04433321644389,
+      "n_points": 1181,
+      "n_fail": 0,
+      "note": "mode conversion loss, near end (LCL), 10-600 MHz"
+     },
+     {
+      "quantity": "lctl",
+      "pair": "A",
+      "unit": "dB",
+      "xunit": "Hz",
+      "kind": "min",
+      "passed": true,
+      "worst_margin": 7.557048956912354,
+      "x_worst": 151874061.71809843,
+      "value_at_worst": 54.4481726303508,
+      "limit_at_worst": 46.89112367343844,
+      "n_points": 1181,
+      "n_fail": 0,
+      "note": "mode conversion transfer loss (LCTL), 10-600 MHz"
+     },
+     {
+      "quantity": "return_loss",
+      "pair": "A",
+      "unit": "dB",
+      "xunit": "Hz",
+      "kind": "min",
+      "passed": true,
+      "worst_margin": 13.63716682917065,
+      "x_worst": 301249374.4787323,
+      "value_at_worst": 22.987338814192903,
+      "limit_at_worst": 9.350171985022254,
+      "n_points": 1200,
+      "n_fail": 0,
+      "note": "differential, both ends, 100 ohm reference"
+     },
+     {
+      "quantity": "phase_delay",
+      "pair": "A",
+      "unit": "ns",
+      "xunit": "Hz",
+      "kind": "max",
+      "passed": true,
+      "worst_margin": 31.412937236338877,
+      "x_worst": 2498748.957464554,
+      "value_at_worst": 62.58706276366112,
+      "limit_at_worst": 94.0,
+      "n_points": 1197,
+      "n_fail": 0,
+      "note": "maximum link delay, 2-600 MHz"
+     },
+     {
+      "quantity": "group_delay",
+      "pair": "A",
+      "unit": "ns",
+      "xunit": "Hz",
+      "kind": null,
+      "passed": null,
+      "worst_margin": null,
+      "x_worst": null,
+      "value_at_worst": null,
+      "limit_at_worst": null,
+      "n_points": 1200,
+      "n_fail": 0,
+      "note": "informational (no limit for this cable type)"
+     },
+     {
+      "quantity": "delay_per_metre",
+      "pair": "A",
+      "unit": "ns/m",
+      "xunit": "Hz",
+      "kind": null,
+      "passed": null,
+      "worst_margin": null,
+      "x_worst": null,
+      "value_at_worst": null,
+      "limit_at_worst": null,
+      "n_points": 1200,
+      "n_fail": 0,
+      "note": "informational (no limit for this cable type)"
+     },
+     {
+      "quantity": "nvp",
+      "pair": "A",
+      "unit": "",
+      "xunit": "",
+      "kind": null,
+      "passed": null,
+      "worst_margin": null,
+      "x_worst": null,
+      "value_at_worst": null,
+      "limit_at_worst": null,
+      "n_points": 1,
+      "n_fail": 0,
+      "note": "informational (no limit for this cable type)"
+     }
+    ],
+    "warnings": [
+     "limit 'next' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)",
+     "limit 'fext' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)",
+     "limit 'impedance_fitted' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)",
+     "limit 'impedance_mean' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)",
+     "limit 'impedance_min' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)",
+     "limit 'impedance_max' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)"
+    ],
+    "cable_length_m": 12.0,
+    "n_connectors": 3,
+    "temperature_c": 85.0,
+    "il_db": {
+     "10MHz": 0.7519112910694002,
+     "100MHz": 2.5866024837705783,
+     "300MHz": 4.880813424696683,
+     "600MHz": 7.4326435750178135
+    },
+    "rl_min_db": 21.809780486300827,
+    "lcl_min_db": 44.12091915030457
+   },
+   "eye": {
+    "phy": "1000BASE-T1",
+    "baud": 750000000.0,
+    "height_raw_v": 0.0018081778231319734,
+    "width_raw_ui": 0.06249999999999808,
+    "height_eq_v": 0.3257801080049913,
+    "width_eq_ui": 1.0,
+    "height_noise_v": 0.2414201080049913,
+    "closure_raw": 0.9945072101158821,
+    "closure_eq": 0.010360180955284126,
+    "main_cursor": 0.658382301627885,
+    "isi_raw_v": 0.32738297299081054,
+    "isi_eq_v": 0.0034104739983297216,
+    "open_raw": true,
+    "open_eq": true,
+    "sim_height_raw_v": 0.07705671408594142,
+    "sim_height_eq_v": 0.3271536749325316,
+    "f_max_hz": 12000000000.0,
+    "band_hz": 600000000.0
+   },
+   "limiting_element": [
+    {
+     "element": "cable-2",
+     "type": "CableSegment",
+     "margin_without_db": 0.5756400555226701,
+     "gain_db": 0.15082774367718205,
+     "headline_without": "insertion_loss[A]"
+    },
+    {
+     "element": "cable-1",
+     "type": "CableSegment",
+     "margin_without_db": 0.500227050354983,
+     "gain_db": 0.07541473850949504,
+     "headline_without": "insertion_loss[A]"
+    },
+    {
+     "element": "camera-header",
+     "type": "Connector",
+     "margin_without_db": 0.4266713198872326,
+     "gain_db": 0.001859008041744603,
+     "headline_without": "insertion_loss[A]"
+    },
+    {
+     "element": "ecu-header",
+     "type": "Connector",
+     "margin_without_db": 0.42667117885023675,
+     "gain_db": 0.0018588670047487432,
+     "headline_without": "insertion_loss[A]"
+    },
+    {
+     "element": "inline",
+     "type": "Connector",
+     "margin_without_db": 0.4266394427071514,
+     "gain_db": 0.001827130861663362,
+     "headline_without": "insertion_loss[A]"
+    },
+    {
+     "element": "ecu-pcb",
+     "type": "PcbTrace",
+     "margin_without_db": 0.42500033003990323,
+     "gain_db": 0.00018801819441521817,
+     "headline_without": "insertion_loss[A]"
+    },
+    {
+     "element": "camera-pcb",
+     "type": "PcbTrace",
+     "margin_without_db": 0.42493768838399015,
+     "gain_db": 0.00012537653850214214,
+     "headline_without": "insertion_loss[A]"
+    }
+   ],
+   "max_length_vs_temperature": [
+    {
+     "temperature_c": 23.0,
+     "max_length_m": 18.1875,
+     "limited_by": "phase_delay[A]",
+     "max_length_eye_m": 18.1875
+    },
+    {
+     "temperature_c": 60.0,
+     "max_length_m": 18.15625,
+     "limited_by": "phase_delay[A]",
+     "max_length_eye_m": 18.15625
+    },
+    {
+     "temperature_c": 85.0,
+     "max_length_m": 18.125,
+     "limited_by": "phase_delay[A]",
+     "max_length_eye_m": 18.125
+    },
+    {
+     "temperature_c": 105.0,
+     "max_length_m": 18.09375,
+     "limited_by": "phase_delay[A]",
+     "max_length_eye_m": 18.09375
+    },
+    {
+     "temperature_c": 125.0,
+     "max_length_m": 18.0625,
+     "limited_by": "phase_delay[A]",
+     "max_length_eye_m": 18.0625
+    }
+   ],
+   "temperature_ceiling": {
+    "temperature_ceiling_c": 150.0,
+    "note": "passes up to 150.0 C"
+   },
+   "connector_budget": {
+    "max_inline_connectors": 2,
+    "table": [
+     {
+      "n_inline": 0,
+      "verdict": "PASS",
+      "headline": "insertion_loss[A]",
+      "headline_margin_db": 0.4266394427071504,
+      "lcl_min_db": 49.333342017941746
+     },
+     {
+      "n_inline": 1,
+      "verdict": "PASS",
+      "headline": "insertion_loss[A]",
+      "headline_margin_db": 0.42481234703151904,
+      "lcl_min_db": 44.95168855956599
+     },
+     {
+      "n_inline": 2,
+      "verdict": "PASS",
+      "headline": "insertion_loss[A]",
+      "headline_margin_db": 0.422985396216294,
+      "lcl_min_db": 41.793196022128186
+     },
+     {
+      "n_inline": 3,
+      "verdict": "FAIL",
+      "headline": "lcl[A]",
+      "headline_margin_db": -1.1049323365862875,
+      "lcl_min_db": 39.48182345069417
+     },
+     {
+      "n_inline": 4,
+      "verdict": "FAIL",
+      "headline": "lcl[A]",
+      "headline_margin_db": -2.9917210892908557,
+      "lcl_min_db": 37.82606265114959
+     }
+    ],
+    "cable_length_m": 12.0,
+    "connector": {
+     "type": "Connector",
+     "name": "inline",
+     "z_diff": 88.0,
+     "length_m": 0.025,
+     "nvp": 0.6,
+     "r_contact_ohm": 0.005,
+     "l_pin_nH": 1.0,
+     "c_pad_pF": 0.3,
+     "asym_c": 0.02,
+     "loss_db_per_m_at_1ghz": 2.0
+    }
+   },
+   "monte_carlo": {
+    "n": 200,
+    "p_pass": 0.81,
+    "margin_percentiles_db": {
+     "p5": -1.5030178565877426,
+     "p50": 0.4234482198922036,
+     "p95": 0.4294019613699028
+    },
+    "quantity_pass_probability": {
+     "insertion_loss": 1.0,
+     "lcl": 0.81,
+     "lctl": 1.0,
+     "return_loss": 1.0,
+     "phase_delay": 1.0
+    },
+    "eye_height_percentiles_v": {
+     "p5": 0.16540131851548787,
+     "p50": 0.21811095219253585,
+     "p95": 0.27679716618477507
+    },
+    "headline_counts": {
+     "insertion_loss[A]": 155,
+     "lcl[A]": 45
+    },
+    "tolerances": {
+     "cable_a_rel": 0.02,
+     "cable_b_rel": 0.05,
+     "cable_z_ohm": 1.0,
+     "cable_length_rel": 0.005,
+     "temperature_k": 2.0,
+     "conn_z_ohm": 5.0,
+     "conn_l_pin_rel": 0.3,
+     "conn_c_pad_rel": 0.3,
+     "conn_asym_c_abs": 0.01,
+     "phy_rl_db": 20.0
+    }
+   },
+   "sensitivity": [
+    {
+     "parameter": "conn_asym",
+     "margin_plus_db": -1.2990682511420626,
+     "eye_plus_v": -1.826578741415119e-05,
+     "margin_minus_db": 2.2405405863956673e-09,
+     "eye_minus_v": 8.419068669274221e-06,
+     "margin_swing_db": 1.2990682533826032,
+     "eye_swing_v": 2.6684856083425412e-05
+    },
+    {
+     "parameter": "cable_a",
+     "margin_plus_db": -0.004463952121805448,
+     "eye_plus_v": -0.002049850373480877,
+     "margin_minus_db": 0.004463952191915588,
+     "eye_minus_v": 0.002032398397973756,
+     "margin_swing_db": 0.008927904313721036,
+     "eye_swing_v": 0.004082248771454633
+    },
+    {
+     "parameter": "cable_length",
+     "margin_plus_db": -0.0011312357132227668,
+     "eye_plus_v": -0.0011190034539878546,
+     "margin_minus_db": 0.001131235402420605,
+     "eye_minus_v": -6.499869683651571e-05,
+     "margin_swing_db": 0.002262471115643372,
+     "eye_swing_v": 0.001054004757151339
+    },
+    {
+     "parameter": "temperature",
+     "margin_plus_db": -0.0007177294785171706,
+     "eye_plus_v": -0.0004514529327927508,
+     "margin_minus_db": 0.0007198945366289622,
+     "eye_minus_v": 0.0004513370480269119,
+     "margin_swing_db": 0.0014376240151461328,
+     "eye_swing_v": 0.0009027899808196627
+    },
+    {
+     "parameter": "conn_z",
+     "margin_plus_db": -0.00023489093187939458,
+     "eye_plus_v": 0.0012646213996883593,
+     "margin_minus_db": 0.00023459878790133004,
+     "eye_minus_v": -0.0035995379253057624,
+     "margin_swing_db": 0.0004694897197807246,
+     "eye_swing_v": 0.004864159324994122
+    },
+    {
+     "parameter": "cable_b",
+     "margin_plus_db": -0.0001511989696357241,
+     "eye_plus_v": -0.0011009676105117605,
+     "margin_minus_db": 0.00015119896966575563,
+     "eye_minus_v": 0.0010950659373902272,
+     "margin_swing_db": 0.00030239793930147973,
+     "eye_swing_v": 0.0021960335479019877
+    },
+    {
+     "parameter": "cable_z",
+     "margin_plus_db": 4.658515948496866e-06,
+     "eye_plus_v": -0.0006090900853586434,
+     "margin_minus_db": -0.0001498142637799682,
+     "eye_minus_v": 0.0004134258910313826,
+     "margin_swing_db": 0.00015447277972846507,
+     "eye_swing_v": 0.001022515976390026
+    },
+    {
+     "parameter": "conn_l_pin",
+     "margin_plus_db": 1.827058127512604e-06,
+     "eye_plus_v": 0.000504429810759488,
+     "margin_minus_db": -1.9244939759022195e-06,
+     "eye_minus_v": -0.002707428806059231,
+     "margin_swing_db": 3.7515521034148236e-06,
+     "eye_swing_v": 0.003211858616818719
+    },
+    {
+     "parameter": "conn_c_pad",
+     "margin_plus_db": -1.4345952024652497e-06,
+     "eye_plus_v": -0.001603371258003694,
+     "margin_minus_db": 1.3798420721022886e-06,
+     "eye_minus_v": 0.0006448598073192091,
+     "margin_swing_db": 2.8144372745675383e-06,
+     "eye_swing_v": 0.002248231065322903
+    }
+   ]
+  },
+  "archive-link": {
+   "describe": {
+    "name": "backbone from archive job",
+    "standard": "1000base-t1-link-segment",
+    "phy": "1000base-t1",
+    "temperature_c": 105.0,
+    "elements": [
+     {
+      "type": "Connector",
+      "name": "header-a",
+      "z_diff": 90.0,
+      "length_m": 0.025,
+      "nvp": 0.6,
+      "r_contact_ohm": 0.005,
+      "l_pin_nH": 1.0,
+      "c_pad_pF": 0.3,
+      "asym_c": 0.01,
+      "loss_db_per_m_at_1ghz": 2.0
+     },
+     {
+      "type": "CableSegment",
+      "name": "trunk",
+      "length_m": 12.0,
+      "temperature_c": 105.0,
+      "model": {
+       "hybrid_raw_structure": true,
+       "skin_temperature": true,
+       "c0_d_db_per_m": 0.008592545856372003,
+       "a_d_db_per_m_sqrtHz": 1.6667781902521782e-05,
+       "b_d_db_per_m_Hz": 2.03679594594949e-10,
+       "nvp_d": 0.6830082244013146,
+       "z_d_ohm": 100.16631808823878,
+       "kz_d": 6.472351451863418,
+       "a_c": 1.2160534102490381e-05,
+       "b_c": 2.055892325382903e-10,
+       "nvp_c": 0.6623259191215566,
+       "z_c_ohm": 35.02473588823757,
+       "conv_per_m_at_f_conv": 0.0002113451589041554,
+       "f_conv_hz": 99917431.2,
+       "source": "measured pairA.s4p (15.0 m)",
+       "fit_rms_db_per_m": 0.00018275650336898615,
+       "fit_band_hz": [
+        1000000.0,
+        600000000.0
+       ]
+      }
+     },
+     {
+      "type": "Connector",
+      "name": "header-b",
+      "z_diff": 90.0,
+      "length_m": 0.025,
+      "nvp": 0.6,
+      "r_contact_ohm": 0.005,
+      "l_pin_nH": 1.0,
+      "c_pad_pF": 0.3,
+      "asym_c": 0.01,
+      "loss_db_per_m_at_1ghz": 2.0
+     }
+    ],
+    "sources": [
+     {
+      "element": "trunk",
+      "source": "archive",
+      "job_dir": "/tmp/g/demo/archive-job",
+      "file": "pairA.s4p",
+      "sha256": "612594934c1e189156304c9c68018a212ceecdac6ab0c6753d58b93a2bd474a3",
+      "sample_id": "C1000T1A-L24071-0041",
+      "measured_length_m": 15.0,
+      "measured_at_c": 23.0,
+      "fixture": "none",
+      "trust": "trusted",
+      "job_trust": "trusted",
+      "calibration": "CAL-20260916-SOLT4",
+      "verification": "pass",
+      "procedure_hash": "76dd721489cb0ab25067b590f792be6ae35c94e9ba51a9c496878da6a737e9e9",
+      "site": "LAB1",
+      "archive_integrity": false
+     }
+    ],
+    "tolerances": {
+     "cable_a_rel": 0.02,
+     "cable_b_rel": 0.05,
+     "cable_z_ohm": 1.0,
+     "cable_length_rel": 0.005,
+     "temperature_k": 2.0,
+     "conn_z_ohm": 5.0,
+     "conn_l_pin_rel": 0.3,
+     "conn_c_pad_rel": 0.3,
+     "conn_asym_c_abs": 0.01,
+     "phy_rl_db": 20.0
+    },
+    "path": "/tmp/g/demo/archive-link.toml"
+   },
+   "evaluation": {
+    "verdict": "PASS",
+    "headline": "insertion_loss[A]",
+    "headline_margin_db": 0.27982667356712887,
+    "headline_x": 1000000.0,
+    "results": [
+     {
+      "quantity": "insertion_loss",
+      "pair": "A",
+      "unit": "dB",
+      "xunit": "Hz",
+      "kind": "max",
+      "passed": true,
+      "worst_margin": 0.27982667356712887,
+      "x_worst": 1000000.0,
+      "value_at_worst": 0.37707332643287106,
+      "limit_at_worst": 0.6568999999999999,
+      "n_points": 1200,
+      "n_fail": 0,
+      "note": "whole link segment incl. connectors; 1 <= f <= 600 MHz"
+     },
+     {
+      "quantity": "lctl",
+      "pair": "A",
+      "unit": "dB",
+      "xunit": "Hz",
+      "kind": "min",
+      "passed": true,
+      "worst_margin": 7.522030666343447,
+      "x_worst": 171357798.16513762,
+      "value_at_worst": 53.80979708666854,
+      "limit_at_worst": 46.28776642032509,
+      "n_points": 1181,
+      "n_fail": 0,
+      "note": "mode conversion transfer loss (LCTL), 10-600 MHz"
+     },
+     {
+      "quantity": "return_loss",
+      "pair": "A",
+      "unit": "dB",
+      "xunit": "Hz",
+      "kind": "min",
+      "passed": true,
+      "worst_margin": 9.434746879169985,
+      "x_worst": 2498748.957464554,
+      "value_at_worst": 28.434746879169985,
+      "limit_at_worst": 19.0,
+      "n_points": 1200,
+      "n_fail": 0,
+      "note": "differential, both ends, 100 ohm reference"
+     },
+     {
+      "quantity": "lcl",
+      "pair": "A",
+      "unit": "dB",
+      "xunit": "Hz",
+      "kind": "min",
+      "passed": true,
+      "worst_margin": 9.676004073308228,
+      "x_worst": 593005838.1984987,
+      "value_at_worst": 49.758095339479276,
+      "limit_at_worst": 40.08209126617105,
+      "n_points": 1181,
+      "n_fail": 0,
+      "note": "mode conversion loss, near end (LCL), 10-600 MHz"
+     },
+     {
+      "quantity": "phase_delay",
+      "pair": "A",
+      "unit": "ns",
+      "xunit": "Hz",
+      "kind": "max",
+      "passed": true,
+      "worst_margin": 34.415595692841485,
+      "x_worst": 2498748.957464554,
+      "value_at_worst": 59.584404307158515,
+      "limit_at_worst": 94.0,
+      "n_points": 1197,
+      "n_fail": 0,
+      "note": "maximum link delay, 2-600 MHz"
+     },
+     {
+      "quantity": "group_delay",
+      "pair": "A",
+      "unit": "ns",
+      "xunit": "Hz",
+      "kind": null,
+      "passed": null,
+      "worst_margin": null,
+      "x_worst": null,
+      "value_at_worst": null,
+      "limit_at_worst": null,
+      "n_points": 1200,
+      "n_fail": 0,
+      "note": "informational (no limit for this cable type)"
+     },
+     {
+      "quantity": "delay_per_metre",
+      "pair": "A",
+      "unit": "ns/m",
+      "xunit": "Hz",
+      "kind": null,
+      "passed": null,
+      "worst_margin": null,
+      "x_worst": null,
+      "value_at_worst": null,
+      "limit_at_worst": null,
+      "n_points": 1200,
+      "n_fail": 0,
+      "note": "informational (no limit for this cable type)"
+     },
+     {
+      "quantity": "nvp",
+      "pair": "A",
+      "unit": "",
+      "xunit": "",
+      "kind": null,
+      "passed": null,
+      "worst_margin": null,
+      "x_worst": null,
+      "value_at_worst": null,
+      "limit_at_worst": null,
+      "n_points": 1,
+      "n_fail": 0,
+      "note": "informational (no limit for this cable type)"
+     }
+    ],
+    "warnings": [
+     "limit 'next' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)",
+     "limit 'fext' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)",
+     "limit 'impedance_fitted' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)",
+     "limit 'impedance_mean' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)",
+     "limit 'impedance_min' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)",
+     "limit 'impedance_max' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)"
+    ],
+    "cable_length_m": 12.0,
+    "n_connectors": 2,
+    "temperature_c": 105.0,
+    "il_db": {
+     "10MHz": 0.9114387832762845,
+     "100MHz": 2.805498575885854,
+     "300MHz": 5.171206253316285,
+     "600MHz": 7.842154920244333
+    },
+    "rl_min_db": 27.713807995240856,
+    "lcl_min_db": 49.758095339479524
+   },
+   "eye": {
+    "phy": "1000BASE-T1",
+    "baud": 750000000.0,
+    "height_raw_v": 0.0065889933153158164,
+    "width_raw_ui": 0.12499999999999616,
+    "height_eq_v": 0.3178776889742396,
+    "width_eq_ui": 1.0,
+    "height_noise_v": 0.23351768897423963,
+    "closure_raw": 0.9793885286838926,
+    "closure_eq": 0.005624890331575982,
+    "main_cursor": 0.6393520592745532,
+    "isi_raw_v": 0.3130870363219608,
+    "isi_eq_v": 0.0017981414880056112,
+    "open_raw": true,
+    "open_eq": true,
+    "sim_height_raw_v": 0.06671175244789934,
+    "sim_height_eq_v": 0.31858920600737706,
+    "f_max_hz": 12000000000.0,
+    "band_hz": 600000000.0
+   },
+   "limiting_element": [
+    {
+     "element": "trunk",
+     "type": "CableSegment",
+     "margin_without_db": 0.6531861260198717,
+     "gain_db": 0.3733594524527428,
+     "headline_without": "insertion_loss[A]"
+    },
+    {
+     "element": "header-a",
+     "type": "Connector",
+     "margin_without_db": 0.28163308498689776,
+     "gain_db": 0.001806411419768894,
+     "headline_without": "insertion_loss[A]"
+    },
+    {
+     "element": "header-b",
+     "type": "Connector",
+     "margin_without_db": 0.2816330849868967,
+     "gain_db": 0.0018064114197678394,
+     "headline_without": "insertion_loss[A]"
+    }
+   ],
+   "max_length_vs_temperature": [
+    {
+     "temperature_c": 23.0,
+     "max_length_m": 19.0625,
+     "limited_by": "phase_delay[A]",
+     "max_length_eye_m": 19.0625
+    },
+    {
+     "temperature_c": 60.0,
+     "max_length_m": 19.0,
+     "limited_by": "phase_delay[A]",
+     "max_length_eye_m": 19.0
+    },
+    {
+     "temperature_c": 85.0,
+     "max_length_m": 18.96875,
+     "limited_by": "phase_delay[A]",
+     "max_length_eye_m": 18.96875
+    },
+    {
+     "temperature_c": 105.0,
+     "max_length_m": 18.9375,
+     "limited_by": "phase_delay[A]",
+     "max_length_eye_m": 18.9375
+    },
+    {
+     "temperature_c": 125.0,
+     "max_length_m": 18.90625,
+     "limited_by": "phase_delay[A]",
+     "max_length_eye_m": 18.90625
+    }
+   ],
+   "temperature_ceiling": {
+    "temperature_ceiling_c": 150.0,
+    "note": "passes up to 150.0 C"
+   },
+   "connector_budget": {
+    "max_inline_connectors": 2,
+    "table": [
+     {
+      "n_inline": 0,
+      "verdict": "PASS",
+      "headline": "insertion_loss[A]",
+      "headline_margin_db": 0.27982667356712887,
+      "lcl_min_db": 49.758095339479524
+     },
+     {
+      "n_inline": 1,
+      "verdict": "PASS",
+      "headline": "insertion_loss[A]",
+      "headline_margin_db": 0.2780554362570308,
+      "lcl_min_db": 44.79003448090816
+     },
+     {
+      "n_inline": 2,
+      "verdict": "PASS",
+      "headline": "insertion_loss[A]",
+      "headline_margin_db": 0.27628294992316327,
+      "lcl_min_db": 41.62038947687472
+     },
+     {
+      "n_inline": 3,
+      "verdict": "FAIL",
+      "headline": "lcl[A]",
+      "headline_margin_db": -0.9772391879399223,
+      "lcl_min_db": 39.304815620398855
+     },
+     {
+      "n_inline": 4,
+      "verdict": "FAIL",
+      "headline": "lcl[A]",
+      "headline_margin_db": -2.7960044454517643,
+      "lcl_min_db": 37.65102964469979
+     }
+    ],
+    "cable_length_m": 12.0,
+    "connector": {
+     "type": "Connector",
+     "name": "inline",
+     "z_diff": 88.0,
+     "length_m": 0.025,
+     "nvp": 0.6,
+     "r_contact_ohm": 0.005,
+     "l_pin_nH": 1.0,
+     "c_pad_pF": 0.3,
+     "asym_c": 0.02,
+     "loss_db_per_m_at_1ghz": 2.0
+    }
+   },
+   "monte_carlo": {
+    "n": 200,
+    "p_pass": 0.98,
+    "margin_percentiles_db": {
+     "p5": 0.2693513091201452,
+     "p50": 0.27994315017154847,
+     "p95": 0.2894279346315415
+    },
+    "quantity_pass_probability": {
+     "insertion_loss": 1.0,
+     "lctl": 1.0,
+     "lcl": 0.98,
+     "return_loss": 1.0,
+     "phase_delay": 1.0
+    },
+    "eye_height_percentiles_v": {
+     "p5": 0.16162093800696212,
+     "p50": 0.21090230154750725,
+     "p95": 0.27840769907508833
+    },
+    "headline_counts": {
+     "insertion_loss[A]": 195,
+     "lcl[A]": 5
+    },
+    "tolerances": {
+     "cable_a_rel": 0.02,
+     "cable_b_rel": 0.05,
+     "cable_z_ohm": 1.0,
+     "cable_length_rel": 0.005,
+     "temperature_k": 2.0,
+     "conn_z_ohm": 5.0,
+     "conn_l_pin_rel": 0.3,
+     "conn_c_pad_rel": 0.3,
+     "conn_asym_c_abs": 0.01,
+     "phy_rl_db": 20.0
+    }
+   },
+   "sensitivity": [
+    {
+     "parameter": "cable_a",
+     "margin_plus_db": -0.0045965167254531925,
+     "eye_plus_v": -0.002161624194871259,
+     "margin_minus_db": 0.004596499411456234,
+     "eye_minus_v": 0.0021596352290669807,
+     "margin_swing_db": 0.009193016136909427,
+     "eye_swing_v": 0.00432125942393824
+    },
+    {
+     "parameter": "cable_z",
+     "margin_plus_db": -0.0027026541253827308,
+     "eye_plus_v": 3.854541781361798e-05,
+     "margin_minus_db": 0.0026373016561891394,
+     "eye_minus_v": -7.067150336126371e-05,
+     "margin_swing_db": 0.00533995578157187,
+     "eye_swing_v": 0.00010921692117488169
+    },
+    {
+     "parameter": "cable_length",
+     "margin_plus_db": -0.0018452491932068327,
+     "eye_plus_v": -0.0007211066608839856,
+     "margin_minus_db": 0.0018454282249497633,
+     "eye_minus_v": 0.0006233393015991906,
+     "margin_swing_db": 0.003690677418156596,
+     "eye_swing_v": 0.0013444459624831762
+    },
+    {
+     "parameter": "temperature",
+     "margin_plus_db": -0.0014709850215685605,
+     "eye_plus_v": -0.000490840818381133,
+     "margin_minus_db": 0.0014729642476141724,
+     "eye_minus_v": 0.0004923803832647122,
+     "margin_swing_db": 0.002943949269182733,
+     "eye_swing_v": 0.0009832212016458453
+    },
+    {
+     "parameter": "cable_b",
+     "margin_plus_db": -0.00016320268107394842,
+     "eye_plus_v": -0.0011913497241089477,
+     "margin_minus_db": 0.0001632026602289005,
+     "eye_minus_v": 0.0011964215577773274,
+     "margin_swing_db": 0.00032640534130284893,
+     "eye_swing_v": 0.002387771281886275
+    },
+    {
+     "parameter": "conn_z",
+     "margin_plus_db": -0.00014407865681159704,
+     "eye_plus_v": 0.00015904033873875845,
+     "margin_minus_db": 0.00014343646648429242,
+     "eye_minus_v": -0.000375595426154951,
+     "margin_swing_db": 0.00028751512329588946,
+     "eye_swing_v": 0.0005346357648937095
+    },
+    {
+     "parameter": "conn_l_pin",
+     "margin_plus_db": 7.3080583815055e-06,
+     "eye_plus_v": 6.814823008682858e-05,
+     "margin_minus_db": -7.347816392722084e-06,
+     "eye_minus_v": -0.00032314490536616836,
+     "margin_swing_db": 1.4655874774227584e-05,
+     "eye_swing_v": 0.00039129313545299693
+    },
+    {
+     "parameter": "conn_c_pad",
+     "margin_plus_db": -5.512161086074219e-06,
+     "eye_plus_v": -0.0003168533935574702,
+     "margin_minus_db": 5.488093595740207e-06,
+     "eye_minus_v": 0.00014576197053850493,
+     "margin_swing_db": 1.1000254681814425e-05,
+     "eye_swing_v": 0.00046261536409597515
+    },
+    {
+     "parameter": "conn_asym",
+     "margin_plus_db": 2.848163815905025e-09,
+     "eye_plus_v": -5.071165028458502e-07,
+     "margin_minus_db": -4.030291045342693e-09,
+     "eye_minus_v": -6.769764036573811e-07,
+     "margin_swing_db": 6.878454861247718e-09,
+     "eye_swing_v": 1.698599008115309e-07
+    }
+   ]
+  },
+  "production-link": {
+   "describe": {
+    "name": "link from production record S0005",
+    "standard": "1000base-t1-link-segment",
+    "phy": "1000base-t1",
+    "temperature_c": 85.0,
+    "elements": [
+     {
+      "type": "Connector",
+      "name": "header-a",
+      "z_diff": 90.0,
+      "length_m": 0.025,
+      "nvp": 0.6,
+      "r_contact_ohm": 0.005,
+      "l_pin_nH": 1.0,
+      "c_pad_pF": 0.3,
+      "asym_c": 0.01,
+      "loss_db_per_m_at_1ghz": 2.0
+     },
+     {
+      "type": "CableSegment",
+      "name": "S0005",
+      "length_m": 15.0,
+      "temperature_c": 85.0,
+      "model": {
+       "hybrid_raw_structure": false,
+       "skin_temperature": true,
+       "c0_d_db_per_m": 0.01487762775896396,
+       "a_d_db_per_m_sqrtHz": 2.3363668586857952e-05,
+       "b_d_db_per_m_Hz": 2.771075075329421e-11,
+       "nvp_d": 0.7672389347924801,
+       "z_d_ohm": 100.74312325481306,
+       "kz_d": 0.0,
+       "a_c": 2.102730172817216e-05,
+       "b_c": 2.493967567796479e-11,
+       "nvp_c": 0.74723893479248,
+       "z_c_ohm": 35.0,
+       "conv_per_m_at_f_conv": 0.0,
+       "f_conv_hz": 100000000.0,
+       "source": "production prediction of S0005 (cableanalytics)",
+       "fit_rms_db_per_m": 0.0,
+       "fit_band_hz": [
+        0.0,
+        0.0
+       ]
+      }
+     },
+     {
+      "type": "Connector",
+      "name": "inline",
+      "z_diff": 88.0,
+      "length_m": 0.025,
+      "nvp": 0.6,
+      "r_contact_ohm": 0.005,
+      "l_pin_nH": 1.0,
+      "c_pad_pF": 0.3,
+      "asym_c": 0.02,
+      "loss_db_per_m_at_1ghz": 2.0
+     },
+     {
+      "type": "Connector",
+      "name": "header-b",
+      "z_diff": 90.0,
+      "length_m": 0.025,
+      "nvp": 0.6,
+      "r_contact_ohm": 0.005,
+      "l_pin_nH": 1.0,
+      "c_pad_pF": 0.3,
+      "asym_c": 0.01,
+      "loss_db_per_m_at_1ghz": 2.0
+     }
+    ],
+    "sources": [
+     {
+      "element": "S0005",
+      "source": "production",
+      "dataset": "/tmp/g/demo/production_dataset.csv",
+      "sample": "S0005",
+      "predicted": {
+       "a": 2.3363668586857952e-05,
+       "b": 2.771075075329421e-11,
+       "z": 100.74312325481306,
+       "nvp": 0.7672389347924801,
+       "c0": 0.01487762775896396
+      },
+      "design": {
+       "line": "L3",
+       "lot": "LOT2026000",
+       "design": "D100-PP-022",
+       "alloy": "CuSn0.3",
+       "insulation": "PP"
+      },
+      "intervals90": {
+       "a": [
+        2.2506283518875536e-05,
+        2.4253716051285458e-05
+       ],
+       "b": [
+        2.5471938656363025e-11,
+        3.014633937646414e-11
+       ],
+       "z": [
+        100.01224179630137,
+        101.47400471332475
+       ]
+      },
+      "u_rel": {
+       "a": 0.022733352271143155,
+       "b": 0.051272176098045574
+      },
+      "note": "no measurement of this cable exists; the coefficients come from the manufacturing-to-physics model"
+     }
+    ],
+    "tolerances": {
+     "cable_a_rel": 0.022733352271143155,
+     "cable_b_rel": 0.051272176098045574,
+     "cable_z_ohm": 1.0,
+     "cable_length_rel": 0.005,
+     "temperature_k": 2.0,
+     "conn_z_ohm": 5.0,
+     "conn_l_pin_rel": 0.3,
+     "conn_c_pad_rel": 0.3,
+     "conn_asym_c_abs": 0.01,
+     "phy_rl_db": 20.0
+    },
+    "path": "/tmp/g/demo/production-link.toml"
+   },
+   "evaluation": {
+    "verdict": "FAIL",
+    "headline": "insertion_loss[A]",
+    "headline_margin_db": -0.022006097485739784,
+    "headline_x": 1000000.0,
+    "results": [
+     {
+      "quantity": "insertion_loss",
+      "pair": "A",
+      "unit": "dB",
+      "xunit": "Hz",
+      "kind": "max",
+      "passed": false,
+      "worst_margin": -0.022006097485739784,
+      "x_worst": 1000000.0,
+      "value_at_worst": 0.6789060974857397,
+      "limit_at_worst": 0.6568999999999999,
+      "n_points": 1200,
+      "n_fail": 1,
+      "note": "whole link segment incl. connectors; 1 <= f <= 600 MHz"
+     },
+     {
+      "quantity": "lcl",
+      "pair": "A",
+      "unit": "dB",
+      "xunit": "Hz",
+      "kind": "min",
+      "passed": true,
+      "worst_margin": 3.041699787605708,
+      "x_worst": 434638031.69307756,
+      "value_at_worst": 44.676849669644426,
+      "limit_at_worst": 41.63514988203872,
+      "n_points": 1181,
+      "n_fail": 0,
+      "note": "mode conversion loss, near end (LCL), 10-600 MHz"
+     },
+     {
+      "quantity": "lctl",
+      "pair": "A",
+      "unit": "dB",
+      "xunit": "Hz",
+      "kind": "min",
+      "passed": true,
+      "worst_margin": 8.579275182034124,
+      "x_worst": 591007506.2552127,
+      "value_at_worst": 48.67823978893354,
+      "limit_at_worst": 40.098964606899415,
+      "n_points": 1181,
+      "n_fail": 0,
+      "note": "mode conversion transfer loss (LCTL), 10-600 MHz"
+     },
+     {
+      "quantity": "return_loss",
+      "pair": "A",
+      "unit": "dB",
+      "xunit": "Hz",
+      "kind": "min",
+      "passed": true,
+      "worst_margin": 15.249492412347603,
+      "x_worst": 593005838.1984987,
+      "value_at_worst": 23.368326022136348,
+      "limit_at_worst": 8.118833609788744,
+      "n_points": 1200,
+      "n_fail": 0,
+      "note": "differential, both ends, 100 ohm reference"
+     },
+     {
+      "quantity": "phase_delay",
+      "pair": "A",
+      "unit": "ns",
+      "xunit": "Hz",
+      "kind": "max",
+      "passed": true,
+      "worst_margin": 23.709667887945884,
+      "x_worst": 2498748.957464554,
+      "value_at_worst": 70.29033211205412,
+      "limit_at_worst": 94.0,
+      "n_points": 1197,
+      "n_fail": 0,
+      "note": "maximum link delay, 2-600 MHz"
+     },
+     {
+      "quantity": "group_delay",
+      "pair": "A",
+      "unit": "ns",
+      "xunit": "Hz",
+      "kind": null,
+      "passed": null,
+      "worst_margin": null,
+      "x_worst": null,
+      "value_at_worst": null,
+      "limit_at_worst": null,
+      "n_points": 1200,
+      "n_fail": 0,
+      "note": "informational (no limit for this cable type)"
+     },
+     {
+      "quantity": "delay_per_metre",
+      "pair": "A",
+      "unit": "ns/m",
+      "xunit": "Hz",
+      "kind": null,
+      "passed": null,
+      "worst_margin": null,
+      "x_worst": null,
+      "value_at_worst": null,
+      "limit_at_worst": null,
+      "n_points": 1200,
+      "n_fail": 0,
+      "note": "informational (no limit for this cable type)"
+     },
+     {
+      "quantity": "nvp",
+      "pair": "A",
+      "unit": "",
+      "xunit": "",
+      "kind": null,
+      "passed": null,
+      "worst_margin": null,
+      "x_worst": null,
+      "value_at_worst": null,
+      "limit_at_worst": null,
+      "n_points": 1,
+      "n_fail": 0,
+      "note": "informational (no limit for this cable type)"
+     }
+    ],
+    "warnings": [
+     "limit 'next' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)",
+     "limit 'fext' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)",
+     "limit 'impedance_fitted' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)",
+     "limit 'impedance_mean' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)",
+     "limit 'impedance_min' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)",
+     "limit 'impedance_max' defined for 1000base-t1-link-segment but the measurement set does not provide that quantity (check the port map / missing files)"
+    ],
+    "cable_length_m": 15.0,
+    "n_connectors": 3,
+    "temperature_c": 85.0,
+    "il_db": {
+     "10MHz": 1.5418249964494348,
+     "100MHz": 4.303997948087912,
+     "300MHz": 7.321406114693842,
+     "600MHz": 10.348149263873713
+    },
+    "rl_min_db": 27.53891062269404,
+    "lcl_min_db": 49.374139600049304
+   },
+   "eye": {
+    "phy": "1000BASE-T1",
+    "baud": 750000000.0,
+    "height_raw_v": 0.0,
+    "width_raw_ui": 0.0,
+    "height_eq_v": 0.2598918584653883,
+    "width_eq_ui": 1.0,
+    "height_noise_v": 0.17553185846538832,
+    "closure_raw": 1.0,
+    "closure_eq": 0.009408728736701955,
+    "main_cursor": 0.526581206134432,
+    "isi_raw_v": 0.43669864081747434,
+    "isi_eq_v": 0.002468477229826349,
+    "open_raw": false,
+    "open_eq": true,
+    "sim_height_raw_v": -0.03961122475732705,
+    "sim_height_eq_v": 0.2614830898604401,
+    "f_max_hz": 12000000000.0,
+    "band_hz": 600000000.0
+   },
+   "limiting_element": [
+    {
+     "element": "header-a",
+     "type": "Connector",
+     "margin_without_db": -0.020151186604071447,
+     "gain_db": 0.0018549108816683368,
+     "headline_without": "insertion_loss[A]"
+    },
+    {
+     "element": "header-b",
+     "type": "Connector",
+     "margin_without_db": -0.020151530568546017,
+     "gain_db": 0.0018545669171937673,
+     "headline_without": "insertion_loss[A]"
+    },
+    {
+     "element": "inline",
+     "type": "Connector",
+     "margin_without_db": -0.020183277177678538,
+     "gain_db": 0.001822820308061246,
+     "headline_without": "insertion_loss[A]"
+    },
+    {
+     "element": "S0005",
+     "type": "CableSegment",
+     "margin_without_db": -0.7245127159060729,
+     "gain_db": -0.7025066184203331,
+     "headline_without": "lctl[A]"
+    }
+   ],
+   "max_length_vs_temperature": [
+    {
+     "temperature_c": 23.0,
+     "max_length_m": 16.875,
+     "limited_by": "insertion_loss[A]",
+     "max_length_eye_m": 16.875
+    },
+    {
+     "temperature_c": 60.0,
+     "max_length_m": 15.34375,
+     "limited_by": "insertion_loss[A]",
+     "max_length_eye_m": 15.34375
+    },
+    {
+     "temperature_c": 85.0,
+     "max_length_m": 14.5,
+     "limited_by": "insertion_loss[A]",
+     "max_length_eye_m": 14.5
+    },
+    {
+     "temperature_c": 105.0,
+     "max_length_m": 13.875,
+     "limited_by": "insertion_loss[A]",
+     "max_length_eye_m": 13.875
+    },
+    {
+     "temperature_c": 125.0,
+     "max_length_m": 13.3125,
+     "limited_by": "insertion_loss[A]",
+     "max_length_eye_m": 13.3125
+    }
+   ],
+   "temperature_ceiling": {
+    "temperature_ceiling_c": null,
+    "note": "fails at 85 C",
+    "limited_by": "insertion_loss[A]"
+   },
+   "connector_budget": {
+    "max_inline_connectors": null,
+    "table": [
+     {
+      "n_inline": 0,
+      "verdict": "FAIL",
+      "headline": "insertion_loss[A]",
+      "headline_margin_db": -0.022006097485739784,
+      "lcl_min_db": 49.374139600049304
+     },
+     {
+      "n_inline": 1,
+      "verdict": "FAIL",
+      "headline": "insertion_loss[A]",
+      "headline_margin_db": -0.023829017006480435,
+      "lcl_min_db": 45.65341289867366
+     },
+     {
+      "n_inline": 2,
+      "verdict": "FAIL",
+      "headline": "lcl[A]",
+      "headline_margin_db": -0.8466108615868961,
+      "lcl_min_db": 42.95912619473525
+     },
+     {
+      "n_inline": 3,
+      "verdict": "FAIL",
+      "headline": "lcl[A]",
+      "headline_margin_db": -2.3444345651646756,
+      "lcl_min_db": 40.69920781998811
+     },
+     {
+      "n_inline": 4,
+      "verdict": "FAIL",
+      "headline": "lcl[A]",
+      "headline_margin_db": -3.609311647935428,
+      "lcl_min_db": 38.97725893983206
+     },
+     {
+      "n_inline": 5,
+      "verdict": "FAIL",
+      "headline": "lcl[A]",
+      "headline_margin_db": -4.69508019487435,
+      "lcl_min_db": 37.65926486263539
+     },
+     {
+      "n_inline": 6,
+      "verdict": "FAIL",
+      "headline": "lcl[A]",
+      "headline_margin_db": -5.648446770473505,
+      "lcl_min_db": 36.517312078306865
+     }
+    ],
+    "cable_length_m": 15.0,
+    "connector": {
+     "type": "Connector",
+     "name": "inline",
+     "z_diff": 88.0,
+     "length_m": 0.025,
+     "nvp": 0.6,
+     "r_contact_ohm": 0.005,
+     "l_pin_nH": 1.0,
+     "c_pad_pF": 0.3,
+     "asym_c": 0.02,
+     "loss_db_per_m_at_1ghz": 2.0
+    }
+   },
+   "monte_carlo": {
+    "n": 200,
+    "p_pass": 0.02,
+    "margin_percentiles_db": {
+     "p5": -1.7042958517512556,
+     "p50": -0.02395207500979457,
+     "p95": -0.006850869519599185
+    },
+    "quantity_pass_probability": {
+     "insertion_loss": 0.025,
+     "return_loss": 1.0,
+     "lcl": 0.76,
+     "lctl": 1.0,
+     "phase_delay": 1.0
+    },
+    "eye_height_percentiles_v": {
+     "p5": 0.12220757835941479,
+     "p50": 0.16308355593217363,
+     "p95": 0.2140103564799567
+    },
+    "headline_counts": {
+     "insertion_loss[A]": 153,
+     "lcl[A]": 47
+    },
+    "tolerances": {
+     "cable_a_rel": 0.022733352271143155,
+     "cable_b_rel": 0.051272176098045574,
+     "cable_z_ohm": 1.0,
+     "cable_length_rel": 0.005,
+     "temperature_k": 2.0,
+     "conn_z_ohm": 5.0,
+     "conn_l_pin_rel": 0.3,
+     "conn_c_pad_rel": 0.3,
+     "conn_asym_c_abs": 0.01,
+     "phy_rl_db": 20.0
+    }
+   },
+   "sensitivity": [
+    {
+     "parameter": "conn_asym",
+     "margin_plus_db": -1.324353359092246,
+     "eye_plus_v": -3.5277410814216204e-06,
+     "margin_minus_db": 2.186686276495209e-09,
+     "eye_minus_v": 1.8209777915001446e-06,
+     "margin_swing_db": 1.3243533612789324,
+     "eye_swing_v": 5.348718872921765e-06
+    },
+    {
+     "parameter": "cable_a",
+     "margin_plus_db": -0.00892672425052543,
+     "eye_plus_v": -0.003497767230249693,
+     "margin_minus_db": 0.008926724339405334,
+     "eye_minus_v": 0.003486381216724066,
+     "margin_swing_db": 0.017853448589930765,
+     "eye_swing_v": 0.006984148446973759
+    },
+    {
+     "parameter": "cable_length",
+     "margin_plus_db": -0.003366860538917993,
+     "eye_plus_v": -0.0009907846142954702,
+     "margin_minus_db": 0.003366860392151172,
+     "eye_minus_v": 0.0007988541252482162,
+     "margin_swing_db": 0.006733720931069165,
+     "eye_swing_v": 0.0017896387395436864
+    },
+    {
+     "parameter": "temperature",
+     "margin_plus_db": -0.002984036016727698,
+     "eye_plus_v": -0.0005495966944557562,
+     "margin_minus_db": 0.0029878557935624217,
+     "eye_minus_v": 0.0005513560800337047,
+     "margin_swing_db": 0.00597189181029012,
+     "eye_swing_v": 0.001100952774489461
+    },
+    {
+     "parameter": "conn_z",
+     "margin_plus_db": -0.00023795220898670255,
+     "eye_plus_v": 0.00020656423915971223,
+     "margin_minus_db": 0.00023789476578373048,
+     "eye_minus_v": -0.0006892064917943252,
+     "margin_swing_db": 0.00047584697477043303,
+     "eye_swing_v": 0.0008957707309540375
+    },
+    {
+     "parameter": "cable_z",
+     "margin_plus_db": -0.00015277523638745905,
+     "eye_plus_v": -0.00012970211808249754,
+     "margin_minus_db": -4.970436973028569e-05,
+     "eye_minus_v": 6.035943844184821e-05,
+     "margin_swing_db": 0.00010307086665717335,
+     "eye_swing_v": 0.00019006155652434575
+    },
+    {
+     "parameter": "cable_b",
+     "margin_plus_db": -2.6852667097010396e-05,
+     "eye_plus_v": -0.000150666265032795,
+     "margin_minus_db": 2.6852667101895378e-05,
+     "eye_minus_v": 0.00015145521897463876,
+     "margin_swing_db": 5.3705334198905774e-05,
+     "eye_swing_v": 0.00030212148400743377
+    },
+    {
+     "parameter": "conn_l_pin",
+     "margin_plus_db": -8.5570608199248e-07,
+     "eye_plus_v": 0.00019850156518841366,
+     "margin_minus_db": 7.683241161071663e-07,
+     "eye_minus_v": -0.0006066720316986185,
+     "margin_swing_db": 1.6240301980996463e-06,
+     "eye_swing_v": 0.0008051735968870322
+    },
+    {
+     "parameter": "conn_c_pad",
+     "margin_plus_db": 5.846532596942566e-07,
+     "eye_plus_v": -0.00034829994820290144,
+     "margin_minus_db": -6.339762014251349e-07,
+     "eye_minus_v": 6.0969519989462206e-05,
+     "margin_swing_db": 1.2186294611193915e-06,
+     "eye_swing_v": 0.00040926946819236365
+    }
+   ]
+  }
+ },
+ "validation": {
+  "scaling_physical": {
+   "l0_m": 10.0,
+   "noise_db": -85.0,
+   "skin_scaling": true,
+   "rows": [
+    {
+     "length_m": 3.0,
+     "temperature_c": 23.0,
+     "il_max_err_db": 0.014841667924231361,
+     "il_err_600_db": -2.0897804631436756e-05,
+     "il_600_truth_db": 1.6181739258801489,
+     "rl_min_truth_db": 33.942755303605196,
+     "rl_min_twin_db": 25.934015968537953,
+     "rl_rms_err_db": 8.917434439531077,
+     "phase_max_err_deg": 1.5443470635931997
+    },
+    {
+     "length_m": 3.0,
+     "temperature_c": 85.0,
+     "il_max_err_db": 0.014512359601595914,
+     "il_err_600_db": -0.0058394289692129675,
+     "il_600_truth_db": 1.8591915286442608,
+     "rl_min_truth_db": 33.91093368185318,
+     "rl_min_twin_db": 26.036550440433945,
+     "rl_rms_err_db": 8.842322690313416,
+     "phase_max_err_deg": 0.9845184271801896
+    },
+    {
+     "length_m": 3.0,
+     "temperature_c": 125.0,
+     "il_max_err_db": 0.01769435821286991,
+     "il_err_600_db": -0.010187627199839122,
+     "il_600_truth_db": 2.008166021908689,
+     "rl_min_truth_db": 33.252607037459256,
+     "rl_min_twin_db": 26.017024776734065,
+     "rl_rms_err_db": 8.141693012830169,
+     "phase_max_err_deg": 1.5245994775063931
+    },
+    {
+     "length_m": 10.0,
+     "temperature_c": 23.0,
+     "il_max_err_db": 0.013037070192468025,
+     "il_err_600_db": 2.7435414624576993e-06,
+     "il_600_truth_db": 5.393663013719799,
+     "rl_min_truth_db": 25.6644273500822,
+     "rl_min_twin_db": 28.417776095869964,
+     "rl_rms_err_db": 4.9461916621206194,
+     "phase_max_err_deg": 5.393474435257907
+    },
+    {
+     "length_m": 10.0,
+     "temperature_c": 85.0,
+     "il_max_err_db": 0.02051517918790946,
+     "il_err_600_db": -0.0197009676774762,
+     "il_600_truth_db": 6.1969710055692095,
+     "rl_min_truth_db": 25.608420840293732,
+     "rl_min_twin_db": 28.134730911575904,
+     "rl_rms_err_db": 4.371017753595326,
+     "phase_max_err_deg": 3.040310130724226
+    },
+    {
+     "length_m": 10.0,
+     "temperature_c": 125.0,
+     "il_max_err_db": 0.034828970518703706,
+     "il_err_600_db": -0.034376456630115015,
+     "il_600_truth_db": 6.693376653394867,
+     "rl_min_truth_db": 25.55831547912518,
+     "rl_min_twin_db": 27.951809228948164,
+     "rl_rms_err_db": 4.146815351662891,
+     "phase_max_err_deg": 4.8416170473315
+    },
+    {
+     "length_m": 15.0,
+     "temperature_c": 23.0,
+     "il_max_err_db": 0.04320249212696137,
+     "il_err_600_db": -0.0006257955852237984,
+     "il_600_truth_db": 8.091103193431547,
+     "rl_min_truth_db": 26.83468058529751,
+     "rl_min_twin_db": 23.97950495282311,
+     "rl_rms_err_db": 10.230997398081357,
+     "phase_max_err_deg": 7.695413776941505
+    },
+    {
+     "length_m": 15.0,
+     "temperature_c": 85.0,
+     "il_max_err_db": 0.03212507750972726,
+     "il_err_600_db": -0.030151205544751036,
+     "il_600_truth_db": 9.29600454226186,
+     "rl_min_truth_db": 25.69524425178372,
+     "rl_min_twin_db": 24.01272165900162,
+     "rl_rms_err_db": 9.573498095525773,
+     "phase_max_err_deg": 4.9334028547231465
+    },
+    {
+     "length_m": 15.0,
+     "temperature_c": 125.0,
+     "il_max_err_db": 0.05386984419670604,
+     "il_err_600_db": -0.05215586784101234,
+     "il_600_truth_db": 10.040577327141328,
+     "rl_min_truth_db": 25.059008125894028,
+     "rl_min_twin_db": 24.018599388968795,
+     "rl_rms_err_db": 8.602617589355491,
+     "phase_max_err_deg": 7.635548907148888
+    },
+    {
+     "length_m": 25.0,
+     "temperature_c": 23.0,
+     "il_max_err_db": 0.07546857408124019,
+     "il_err_600_db": -0.0007013409764891065,
+     "il_600_truth_db": 13.48480821513553,
+     "rl_min_truth_db": 24.17498670664198,
+     "rl_min_twin_db": 24.173265986091334,
+     "rl_rms_err_db": 10.130740610302391,
+     "phase_max_err_deg": 12.108155647865622
+    },
+    {
+     "length_m": 25.0,
+     "temperature_c": 85.0,
+     "il_max_err_db": 0.05514155405689891,
+     "il_err_600_db": -0.050035227663824955,
+     "il_600_truth_db": 15.493031247691304,
+     "rl_min_truth_db": 22.9932114772229,
+     "rl_min_twin_db": 24.210320360761813,
+     "rl_rms_err_db": 9.808391836752524,
+     "phase_max_err_deg": 8.90252837749304
+    },
+    {
+     "length_m": 25.0,
+     "temperature_c": 125.0,
+     "il_max_err_db": 0.0909364815844782,
+     "il_err_600_db": -0.08676739485954599,
+     "il_600_truth_db": 16.733973587064312,
+     "rl_min_truth_db": 22.34056948809327,
+     "rl_min_twin_db": 24.226552052216626,
+     "rl_rms_err_db": 9.01853549259152,
+     "phase_max_err_deg": 13.408178939115817
+    }
+   ],
+   "model": {
+    "hybrid_raw_structure": false,
+    "skin_temperature": true,
+    "c0_d_db_per_m": 0.00859781975283018,
+    "a_d_db_per_m_sqrtHz": 1.6647024512701946e-05,
+    "b_d_db_per_m_Hz": 1.9846277548408425e-10,
+    "nvp_d": 0.6820859330727655,
+    "z_d_ohm": 99.48004612911319,
+    "kz_d": 26.367525835628577,
+    "a_c": 1.1909317670002434e-05,
+    "b_c": 2.045837990019161e-10,
+    "nvp_c": 0.6614046385333492,
+    "z_c_ohm": 34.82681099471129,
+    "conv_per_m_at_f_conv": 6.538034398607038e-06,
+    "f_conv_hz": 99917431.19266056,
+    "source": "measured measured (10.0 m)",
+    "fit_rms_db_per_m": 0.00029493565502215074,
+    "fit_band_hz": [
+     1000000.0,
+     600000000.0
+    ]
+   },
+   "extrapolation": {
+    "max_err_db": 0.03856168692088957,
+    "err_at_2_5ghz_db": -0.03856168692088957
+   }
+  },
+  "scaling_stack": {
+   "l0_m": 10.0,
+   "noise_db": -85.0,
+   "skin_scaling": false,
+   "rows": [
+    {
+     "length_m": 3.0,
+     "temperature_c": 23.0,
+     "il_max_err_db": 0.014941891146411423,
+     "il_err_600_db": -2.12273064761348e-05,
+     "il_600_truth_db": 1.6110158408697224,
+     "rl_min_truth_db": 33.93617309693123,
+     "rl_min_twin_db": 25.89553795140575,
+     "rl_rms_err_db": 8.930306071005116,
+     "phase_max_err_deg": 1.5349699841387667
+    },
+    {
+     "length_m": 3.0,
+     "temperature_c": 85.0,
+     "il_max_err_db": 0.014781373746032944,
+     "il_err_600_db": -0.005909108215409686,
+     "il_600_truth_db": 1.71193005802865,
+     "rl_min_truth_db": 33.799169861190386,
+     "rl_min_twin_db": 25.87680883120267,
+     "rl_rms_err_db": 9.048147394895617,
+     "phase_max_err_deg": 1.5346488638490468
+    },
+    {
+     "length_m": 3.0,
+     "temperature_c": 125.0,
+     "il_max_err_db": 0.017691989554107668,
+     "il_err_600_db": -0.009751078561676563,
+     "il_600_truth_db": 1.7771232140463358,
+     "rl_min_truth_db": 33.70065832188425,
+     "rl_min_twin_db": 25.847685018462236,
+     "rl_rms_err_db": 8.380268149869284,
+     "phase_max_err_deg": 1.5344587073474485
+    },
+    {
+     "length_m": 10.0,
+     "temperature_c": 23.0,
+     "il_max_err_db": 0.01312101568669588,
+     "il_err_600_db": 2.623739950635695e-06,
+     "il_600_truth_db": 5.369801613168004,
+     "rl_min_truth_db": 25.654735773538917,
+     "rl_min_twin_db": 28.404008001583755,
+     "rl_rms_err_db": 4.944858830784702,
+     "phase_max_err_deg": 5.362213236775294
+    },
+    {
+     "length_m": 10.0,
+     "temperature_c": 85.0,
+     "il_max_err_db": 0.020744518910126075,
+     "il_err_600_db": -0.019931660608786927,
+     "il_600_truth_db": 5.70608556410508,
+     "rl_min_truth_db": 25.416241995291593,
+     "rl_min_twin_db": 27.88004598465854,
+     "rl_rms_err_db": 4.468174558658047,
+     "phase_max_err_deg": 5.3594368346923345
+    },
+    {
+     "length_m": 10.0,
+     "temperature_c": 125.0,
+     "il_max_err_db": 0.033434761834636895,
+     "il_err_600_db": -0.0329389189741125,
+     "il_600_truth_db": 5.923218246768013,
+     "rl_min_truth_db": 25.263833851260422,
+     "rl_min_twin_db": 27.561707933636903,
+     "rl_rms_err_db": 4.209983437649297,
+     "phase_max_err_deg": 5.357778743139797
+    },
+    {
+     "length_m": 15.0,
+     "temperature_c": 23.0,
+     "il_max_err_db": 0.04337243251998579,
+     "il_err_600_db": -0.0006259979394158677,
+     "il_600_truth_db": 8.055311127749915,
+     "rl_min_truth_db": 26.869833501692067,
+     "rl_min_twin_db": 23.931083555199876,
+     "rl_rms_err_db": 10.24512571776163,
+     "phase_max_err_deg": 7.648510864510836
+    },
+    {
+     "length_m": 15.0,
+     "temperature_c": 85.0,
+     "il_max_err_db": 0.03254876368526638,
+     "il_err_600_db": -0.030499406064604884,
+     "il_600_truth_db": 8.5596715046621,
+     "rl_min_truth_db": 26.34058648537306,
+     "rl_min_twin_db": 23.82332587629292,
+     "rl_rms_err_db": 9.632644899113945,
+     "phase_max_err_deg": 7.643095113389962
+    },
+    {
+     "length_m": 15.0,
+     "temperature_c": 125.0,
+     "il_max_err_db": 0.05188441058871618,
+     "il_err_600_db": -0.050003815298364174,
+     "il_600_truth_db": 8.885329185228997,
+     "rl_min_truth_db": 26.004247902704645,
+     "rl_min_twin_db": 23.749574985093645,
+     "rl_rms_err_db": 8.694204728742703,
+     "phase_max_err_deg": 7.639825314759934
+    },
+    {
+     "length_m": 25.0,
+     "temperature_c": 23.0,
+     "il_max_err_db": 0.07571565098687394,
+     "il_err_600_db": -0.0007045182083693646,
+     "il_600_truth_db": 13.425157610249187,
+     "rl_min_truth_db": 24.205861613311694,
+     "rl_min_twin_db": 24.204131585059102,
+     "rl_rms_err_db": 10.147745470234625,
+     "phase_max_err_deg": 12.029995236454669
+    },
+    {
+     "length_m": 25.0,
+     "temperature_c": 85.0,
+     "il_max_err_db": 0.056007646595297444,
+     "il_err_600_db": -0.050684798044590806,
+     "il_600_truth_db": 14.265882777724052,
+     "rl_min_truth_db": 23.55231439563628,
+     "rl_min_twin_db": 24.249568543289392,
+     "rl_rms_err_db": 9.897983181363768,
+     "phase_max_err_deg": 12.022717370377572
+    },
+    {
+     "length_m": 25.0,
+     "temperature_c": 125.0,
+     "il_max_err_db": 0.08780895448757065,
+     "il_err_600_db": -0.08329913349124851,
+     "il_600_truth_db": 14.808687156957381,
+     "rl_min_truth_db": 23.15443373038559,
+     "rl_min_twin_db": 24.27111324610709,
+     "rl_rms_err_db": 9.145371699064485,
+     "phase_max_err_deg": 12.01835816302031
+    }
+   ],
+   "model": {
+    "hybrid_raw_structure": false,
+    "skin_temperature": true,
+    "c0_d_db_per_m": 0.008598047174969679,
+    "a_d_db_per_m_sqrtHz": 1.655015833181255e-05,
+    "b_d_db_per_m_Hz": 1.9846320818164496e-10,
+    "nvp_d": 0.6820737674937539,
+    "z_d_ohm": 99.4800872522823,
+    "kz_d": 26.359102862344685,
+    "a_c": 1.184013175375795e-05,
+    "b_c": 2.0458406352937996e-10,
+    "nvp_c": 0.6613964600655691,
+    "z_c_ohm": 34.82681497296411,
+    "conv_per_m_at_f_conv": 6.538034398320266e-06,
+    "f_conv_hz": 99917431.19266056,
+    "source": "measured measured (10.0 m)",
+    "fit_rms_db_per_m": 0.00029562279831774074,
+    "fit_band_hz": [
+     1000000.0,
+     600000000.0
+    ]
+   },
+   "extrapolation": {
+    "max_err_db": 0.1116175321045958,
+    "err_at_2_5ghz_db": -0.1116175321045958
+   }
+  },
+  "cascade": {
+   "same_verdict": true,
+   "headline_diff_db": 0.0013713289692725006,
+   "per_quantity": {
+    "insertion_loss": {
+     "truth_margin_db": 0.2694141807075733,
+     "twin_margin_db": 0.2707855096768458,
+     "diff_db": 0.0013713289692725006,
+     "truth_pass": true,
+     "twin_pass": true
+    },
+    "lcl": {
+     "truth_margin_db": 4.331935681818905,
+     "twin_margin_db": 4.32666299989009,
+     "diff_db": -0.005272681928815359,
+     "truth_pass": true,
+     "twin_pass": true
+    },
+    "return_loss": {
+     "truth_margin_db": 7.73865534748262,
+     "twin_margin_db": 7.7518416568944595,
+     "diff_db": 0.013186309411839403,
+     "truth_pass": true,
+     "twin_pass": true
+    },
+    "lctl": {
+     "truth_margin_db": 8.115802698452868,
+     "twin_margin_db": 8.009489094037399,
+     "diff_db": -0.10631360441546889,
+     "truth_pass": true,
+     "twin_pass": true
+    },
+    "phase_delay": {
+     "truth_margin_db": 19.339131967907562,
+     "twin_margin_db": 19.3318248726587,
+     "diff_db": -0.007307095248862083,
+     "truth_pass": true,
+     "twin_pass": true
+    }
+   },
+   "truth_verdict": "PASS",
+   "twin_verdict": "PASS"
+  },
+  "eye": [
+   {
+    "length_m": 5.0,
+    "pda_raw_v": 0.27954458031961804,
+    "sim_raw_v": 0.304489039608744,
+    "pda_eq_v": 0.42022701107356636,
+    "sim_eq_v": 0.42095727970613794,
+    "width_raw_ui": 0.7187499999999779,
+    "main_cursor": 0.8435225038785923,
+    "bound_holds_raw": true,
+    "bound_holds_eq": true
+   },
+   {
+    "length_m": 10.0,
+    "pda_raw_v": 0.10679480909784878,
+    "sim_raw_v": 0.16443997768954643,
+    "pda_eq_v": 0.36120370597841317,
+    "sim_eq_v": 0.3620505873393948,
+    "width_raw_ui": 0.4999999999999846,
+    "main_cursor": 0.7257488074447718,
+    "bound_holds_raw": true,
+    "bound_holds_eq": true
+   },
+   {
+    "length_m": 15.0,
+    "pda_raw_v": 0.0,
+    "sim_raw_v": 0.050164300656053235,
+    "pda_eq_v": 0.3105929786691342,
+    "sim_eq_v": 0.31124183043984927,
+    "width_raw_ui": 0.0,
+    "main_cursor": 0.6253677241956352,
+    "bound_holds_raw": true,
+    "bound_holds_eq": true
+   }
+  ]
+ },
+ "seconds": 771.8718221187592
+}

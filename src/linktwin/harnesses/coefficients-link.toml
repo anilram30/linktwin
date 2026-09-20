@@ -1,0 +1,50 @@
+# The same harness from a data sheet: loss coefficients, NVP and impedance only (no measurement)
+[harness]
+name = "ECU-A to camera (data-sheet cable)"
+standard = "1000base-t1-link-segment"
+phy = "1000base-t1"
+temperature_c = 85
+
+[[element]]
+type = "pcb"
+name = "ecu-pcb"
+length_m = 0.06
+
+[[element]]
+type = "connector"
+name = "ecu-header"
+
+[[element]]
+type = "cable"
+name = "cable-1"
+length_m = 4.0
+source = "coefficients"
+a = 1.66e-5
+b = 2.0e-10
+nvp = 0.68
+z_diff = 100
+
+[[element]]
+type = "connector"
+name = "inline"
+z_diff = 88
+asym_c = 0.02
+
+[[element]]
+type = "cable"
+name = "cable-2"
+length_m = 8.0
+source = "coefficients"
+a = 1.66e-5
+b = 2.0e-10
+nvp = 0.68
+z_diff = 100
+
+[[element]]
+type = "connector"
+name = "camera-header"
+
+[[element]]
+type = "pcb"
+name = "camera-pcb"
+length_m = 0.04

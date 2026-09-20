@@ -1,0 +1,67 @@
+# ECU-A to camera: 4 m + 8 m of one cable type with an inline connector, 85 °C in the engine bay
+[harness]
+name = "ECU-A to camera"
+standard = "1000base-t1-link-segment"
+phy = "1000base-t1"
+temperature_c = 85
+
+[[element]]
+type = "pcb"
+name = "ecu-pcb"
+length_m = 0.06
+z_diff = 95
+
+[[element]]
+type = "connector"
+name = "ecu-header"
+z_diff = 90
+length_m = 0.02
+asym_c = 0.01
+
+[[element]]
+type = "cable"
+name = "cable-1"
+length_m = 4.0
+source = "touchstone"
+path = "pairA_10m_23C.s4p"
+measured_length_m = 10
+measured_at_c = 23
+port_map = "A+near,A-near,A+far,A-far"
+
+[[element]]
+type = "connector"
+name = "inline"
+z_diff = 88
+length_m = 0.03
+asym_c = 0.02
+
+[[element]]
+type = "cable"
+name = "cable-2"
+length_m = 8.0
+source = "touchstone"
+path = "pairA_10m_23C.s4p"
+measured_length_m = 10
+measured_at_c = 23
+
+[[element]]
+type = "connector"
+name = "camera-header"
+z_diff = 90
+length_m = 0.02
+asym_c = 0.01
+
+[[element]]
+type = "pcb"
+name = "camera-pcb"
+length_m = 0.04
+z_diff = 95
+
+[tolerances]
+cable_a_rel = 0.02
+cable_b_rel = 0.05
+cable_z_ohm = 1.5
+cable_length_rel = 0.005
+temperature_k = 3.0
+conn_z_ohm = 5.0
+conn_asym_c_abs = 0.01

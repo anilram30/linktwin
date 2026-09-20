@@ -1,0 +1,28 @@
+# A cable that was never measured: project E predicts a, b, Z from the extrusion-line record of sample S0005
+[harness]
+name = "link from production record S0005"
+standard = "1000base-t1-link-segment"
+phy = "1000base-t1"
+temperature_c = 85
+
+[[element]]
+type = "connector"
+name = "header-a"
+
+[[element]]
+type = "cable"
+name = "S0005"
+length_m = 15.0
+source = "production"
+dataset = "production_dataset.csv"
+sample = "S0005"
+
+[[element]]
+type = "connector"
+name = "inline"
+z_diff = 88
+asym_c = 0.02
+
+[[element]]
+type = "connector"
+name = "header-b"

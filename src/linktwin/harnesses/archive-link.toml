@@ -1,0 +1,21 @@
+# The cable from a labauto archive job (project B): length, temperature, trust and hashes come from the sidecar
+[harness]
+name = "backbone from archive job"
+standard = "1000base-t1-link-segment"
+phy = "1000base-t1"
+temperature_c = 105
+
+[[element]]
+type = "connector"
+name = "header-a"
+
+[[element]]
+type = "cable"
+name = "trunk"
+length_m = 12.0
+source = "archive"
+job_dir = "archive-job"
+
+[[element]]
+type = "connector"
+name = "header-b"

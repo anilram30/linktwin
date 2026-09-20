@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "linktwin: Predicts whether a complete Ethernet harness will pass — and what the receiver actually sees — before the harness exists"
+abstract: "Predicts whether a complete Ethernet harness will pass — and what the receiver actually sees — before the harness exists."
+type: software
+authors:
+  - family-names: Anil
+    given-names: Sreeram
+    email: sreeramanil30@gmail.com
+repository-code: "https://github.com/anilram30/linktwin"
+license: MIT
+keywords:
+  - digital-twin
+  - signal-integrity
+  - eye-diagram
+  - automotive-ethernet
+  - monte-carlo
+  - uncertainty-quantification
+  - 1000base-t1
+  - equalization
+  - transmission-lines
+  - python

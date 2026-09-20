@@ -1,0 +1,25 @@
+{
+ "loop_resistance": 2.757263,
+ "loop_resistance_state": {
+  "identity": {
+   "manufacturer": "labauto-sim",
+   "model": "DMM-6.5",
+   "serial": "SIM0003",
+   "firmware": "1.1",
+   "idn": "labauto-sim,DMM-6.5,SIM0003,1.1"
+  },
+  "address": "SIM::DMM",
+  "dialect": "generic-scpi-dmm",
+  "capabilities": {
+   "role": "dmm",
+   "ports": 0,
+   "fmin_hz": 0.0,
+   "fmax_hz": 0.0,
+   "tmin_c": 0.0,
+   "tmax_c": 0.0,
+   "features": [
+    "4-wire-resistance"
+   ]
+  }
+ }
+}
